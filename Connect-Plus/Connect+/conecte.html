@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Connect+ — Conecte-se</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app">
+  <header class="topbar">
+    <div class="brand"><h1>Conecte-se</h1></div>
+    <nav><a href="index.html" class="navlink">Voltar</a></nav>
+  </header>
+
+  <main class="container">
+    <h2>Conecte-se e Cresça</h2>
+    <p class="muted">Marque Coffee Connects e compartilhe aprendizados.</p>
+
+    <div class="card">
+      <h3>Marcar Coffee Connect</h3>
+      <p class="muted">Simule marcar um encontro com outro colaborador.</p>
+      <button id="coffee" class="btn primary">Marcar (50 XP)</button>
+    </div>
+
+    <div class="card mt-6">
+      <h3>Compartilhar no canal #GenOStories</h3>
+      <p class="muted">Conte o que aprendeu.</p>
+      <textarea id="share-text" rows="3" placeholder="Compartilhe..."></textarea>
+      <button id="share-btn" class="btn">Compartilhar (50 XP)</button>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('coffee').addEventListener('click', ()=>{
+      window.dispatchEvent(new CustomEvent('cp:completeMission', {detail:{id:'coffee', xp:50, badge:'Connector'}}));
+      alert('Coffee marcado! +50 XP');
+    });
+    document.getElementById('share-btn').addEventListener('click', ()=>{
+      const text = document.getElementById('share-text').value;
+      if(!text) return alert('Escreva algo antes de compartilhar.');
+      window.dispatchEvent(new CustomEvent('cp:completeMission', {detail:{id:'share', xp:50, badge:'Oracle Insider'}}));
+      alert('Compartilhado! +50 XP');
+      document.getElementById('share-text').value = '';
+    });
+  </script>
+</body>
+</html>

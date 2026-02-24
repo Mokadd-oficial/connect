@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Connect+ — Painel RH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="app">
+  <header class="topbar">
+    <div class="brand">
+      <h1>Painel RH</h1>
+      <div class="muted" style="margin-top:4px;">
+        <span id="admin-user-label"></span>
+      </div>
+    </div>
+    <nav>
+      <a href="home.html" class="navlink">Voltar</a>
+      <a href="index.html" class="navlink" id="logout-btn" style="margin-left:12px;">Sair</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Relatórios</h2>
+
+    <div class="card">
+      <p class="muted">Métricas (via API). Se a API estiver off, cai no modo demo/local.</p>
+
+      <ul id="admin-metrics" class="muted"></ul>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+        <button id="refresh-metrics" class="btn">Atualizar</button>
+        <button id="export-csv" class="btn">Exportar CSV</button>
+      </div>
+
+      <p id="admin-status" class="muted" style="margin-top:10px;"></p>
+    </div>
+  </main>
+
+  <!-- Proteção (mantém!) -->
+  <script src="js/auth.js"></script>
+  <script>
+    requireAuth();
+    requireAdmin();
+  </script>
+
+  <!-- Integração API -->
+  <script>
+    const API_BASE = "http://localhost:8000";
+
+    function getToken() {
+      return localStorage.getItem("cp_token");
+    }
+
+    function getUser() {
+      try { return JSON.parse(localStorage.getItem("cp_user") || "null"); }
+      catch { return null; }
+    }
+
+    function setStatus(msg) {
+      document.getElementById("admin-status").textContent = msg || "";
+    }
+
+    function renderMetrics({ xp_total = 0, missions_done = 0, users_total = null, island_rank = null } = {}) {
+      const el = document.getElementById("admin-metrics");
+      el.innerHTML = "";
+      el.insertAdjacentHTML("beforeend", `<li>XP total: ${xp_total}</li>`);
+      el.insertAdjacentHTML("beforeend", `<li>Missões concluídas: ${missions_done}</li>`);
+
+      // extras opcionais (se a API devolver)
+      if (users_total !== null) el.insertAdjacentHTML("beforeend", `<li>Usuários cadastrados: ${users_total}</li>`);
+      if (island_rank !== null) el.insertAdjacentHTML("beforeend", `<li>Ranking por ilha: ${island_rank}</li>`);
+    }
+
+    function getLocalDemoMetrics() {
+      const state = JSON.parse(localStorage.getItem("cp_state") || "{}");
+      const missions = state.missions || {};
+      const done = Object.keys(missions).filter(k => missions[k]?.done).length;
+
+      return {
+        xp_total: state.xp || 0,
+        missions_done: done
+      };
+    }
+
+    async function fetchAdminMetrics() {
+      const token = getToken();
+      if (!token) throw new Error("Sem token (cp_token). Faça login novamente.");
+
+      const resp = await fetch(`${API_BASE}/admin/metrics`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+
+      const data = await resp.json().catch(() => ({}));
+
+      if (!resp.ok) {
+        // backend pode devolver {detail: "..."}
+        throw new Error(data.detail || `Erro ao buscar métricas (${resp.status})`);
+      }
+
+      return data;
+    }
+
+    async function downloadAdminCsv() {
+      const token = getToken();
+      if (!token) throw new Error("Sem token (cp_token). Faça login novamente.");
+
+      const resp = await fetch(`${API_BASE}/admin/export.csv`, {
+        method: "GET",
+        headers: { "Authorization": `Bearer ${token}` }
+      });
+
+      if (!resp.ok) {
+        const data = await resp.json().catch(() => ({}));
+        throw new Error(data.detail || `Erro ao exportar CSV (${resp.status})`);
+      }
+
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `connectplus_admin_export_${new Date().toISOString().slice(0,10)}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
+    }
+
+    async function refresh() {
+      setStatus("Carregando métricas...");
+      try {
+        // tenta API primeiro
+        const metrics = await fetchAdminMetrics();
+        renderMetrics(metrics);
+        setStatus("OK (dados via API).");
+      } catch (e) {
+        // fallback local
+        renderMetrics(getLocalDemoMetrics());
+        setStatus(`API indisponível ou bloqueada. Mostrando demo/local. (${e.message})`);
+      }
+    }
+
+    (function init() {
+      const user = getUser();
+      const label = document.getElementById("admin-user-label");
+      if (user) label.textContent = `${user.name || "Usuário"} • ${user.email || ""} • role=${user.role || ""}`;
+
+      document.getElementById("refresh-metrics").addEventListener("click", refresh);
+
+      document.getElementById("export-csv").addEventListener("click", async () => {
+        setStatus("Gerando CSV...");
+        try {
+          await downloadAdminCsv();
+          setStatus("CSV baixado com sucesso.");
+        } catch (e) {
+          setStatus(`Falha ao exportar CSV: ${e.message}`);
+        }
+      });
+
+      document.getElementById("logout-btn").addEventListener("click", (e) => {
+        // opcional: limpa sessão
+        localStorage.removeItem("cp_token");
+        localStorage.removeItem("cp_user");
+        // deixa seguir para index.html
+      });
+
+      refresh();
+    })();
+  </script>
+</body>
+</html>

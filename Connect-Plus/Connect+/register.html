@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect+ — Cadastro</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#1C1C1C',
+            surface: '#242424',
+            accent: '#D64B36',
+            white: '#FFFFFF',
+            muted: '#BDBDBD',
+          },
+          borderRadius: { 'md': '12px' },
+          boxShadow: { 'aria-elev-1': '0 6px 20px rgba(0,0,0,0.6)' },
+          spacing: { 'gap-md': '16px' },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-bg text-white antialiased font-sans min-h-screen flex items-center justify-center">
+
+  <!-- CARD DE CADASTRO -->
+  <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-8 shadow-aria-elev-1 border border-white/3 w-full max-w-md">
+    <!-- Logo -->
+    <div class="flex items-center justify-center gap-2.5 mb-8">
+      <div class="w-9 h-5 rounded-full bg-transparent shadow-[inset_0_0_0_4px_#D64B36]"></div>
+      <h1 class="text-2xl font-bold text-accent">Connect+</h1>
+    </div>
+
+    <h2 class="text-2xl font-bold text-white mb-2 text-center">Criar conta</h2>
+    <p class="text-muted text-sm text-center mb-6">Cadastre-se para acessar as ilhas</p>
+
+    <form id="register-form" class="space-y-4">
+      <div>
+        <label for="register-name" class="block text-sm font-medium text-white mb-1">Nome completo</label>
+        <input id="register-name" type="text" placeholder="Seu nome"
+               class="w-full bg-surface border border-white/10 rounded-md px-3 py-2 text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent"
+               required />
+      </div>
+
+      <div>
+        <label for="register-email" class="block text-sm font-medium text-white mb-1">E-mail</label>
+        <input id="register-email" type="email" placeholder="seu@empresa.com"
+               class="w-full bg-surface border border-white/10 rounded-md px-3 py-2 text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent"
+               required />
+      </div>
+
+      <div>
+        <label for="register-password" class="block text-sm font-medium text-white mb-1">Senha</label>
+        <input id="register-password" type="password" placeholder="Crie uma senha"
+               class="w-full bg-surface border border-white/10 rounded-md px-3 py-2 text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent"
+               required />
+        <p class="text-xs text-muted mt-1">Dica: use uma senha curta por enquanto (MVP).</p>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-white mb-1">Tipo de conta</label>
+        <select id="register-role"
+                class="w-full bg-surface border border-white/10 rounded-md px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-accent">
+          <option value="employee">Usuário</option>
+          <option value="admin">Empresa (Admin)</option>
+        </select>
+      </div>
+
+      <div id="error-message" class="text-red-400 text-sm hidden">Erro ao cadastrar.</div>
+
+      <button id="register-btn" type="submit"
+              class="w-full flex items-center justify-center gap-2 p-3 rounded-[10px] bg-accent text-white border-none cursor-pointer font-semibold shadow-[0_6px_18px_rgba(214,75,54,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(214,75,54,0.14)] active:translate-y-0">
+        <span class="material-icons-outlined">person_add</span> Criar conta
+      </button>
+    </form>
+
+    <div class="mt-6 text-center">
+      <a href="index.html" class="text-accent hover:underline text-sm">Já tenho conta — Entrar</a>
+    </div>
+
+    <p class="text-muted text-xs text-center mt-4">Cadastro via API (FastAPI + PostgreSQL).</p>
+  </div>
+
+  <script>
+    const API_BASE = "http://localhost:8000";
+
+    function showError(msg) {
+      const el = document.getElementById("error-message");
+      el.textContent = msg || "Erro ao cadastrar.";
+      el.classList.remove("hidden");
+    }
+
+    function hideError() {
+      document.getElementById("error-message").classList.add("hidden");
+    }
+
+    function setLoading(isLoading) {
+      const btn = document.getElementById("register-btn");
+      btn.disabled = isLoading;
+      btn.style.opacity = isLoading ? "0.85" : "1";
+      btn.innerHTML = isLoading
+        ? `<span class="material-icons-outlined">hourglass_top</span> Criando...`
+        : `<span class="material-icons-outlined">person_add</span> Criar conta`;
+    }
+
+    document.getElementById("register-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      hideError();
+      setLoading(true);
+
+      const full_name = document.getElementById("register-name").value.trim();
+      const email = document.getElementById("register-email").value.trim();
+      const password = document.getElementById("register-password").value;
+      const role_code = document.getElementById("register-role").value; // employee/admin
+
+      try {
+        const resp = await fetch(`${API_BASE}/auth/register`, {
+          method: "POST",
+          headers: {"Content-Type":"application/json"},
+          body: JSON.stringify({ full_name, email, password, role_code })
+        });
+
+        const data = await resp.json().catch(() => ({}));
+
+        if (!resp.ok) {
+          showError(data.detail || "Falha no cadastro.");
+          return;
+        }
+
+        // salva sessão (igual no login)
+        localStorage.setItem("cp_token", data.access_token);
+        localStorage.setItem("cp_user", JSON.stringify({
+          user_id: data.user_id,
+          name: data.full_name,
+          email: data.email,
+          role: data.role_code
+        }));
+
+        // redireciona por tipo
+        if (data.role_code === "admin") {
+          location.href = "admin.html";
+        } else {
+          location.href = "home.html";
+        }
+
+      } catch (err) {
+        showError("Não consegui conectar na API. Confere se o backend está rodando na porta 8000.");
+      } finally {
+        setLoading(false);
+      }
+    });
+  </script>
+
+</body>
+</html>

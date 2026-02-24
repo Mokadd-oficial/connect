@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Welcome - Connect + Missions</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "primary-dark": "#b30000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#050000",
+                        "card-dark": "#120505",
+                        "accent-dark": "#2b0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a0f0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #392828;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f20d0d;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+            color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(242,13,13,0.15) 0%, rgba(5,0,0,0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-accent-dark bg-background-dark/95 backdrop-blur-md">
+<div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-primary">
+</div>
+<h1 class="text-white font-bold text-xl tracking-tight">Connect <span class="text-primary font-white">+</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+    <a href="home.html" class="text-white hover:text-primary text-sm font-bold transition-colors">
+    Home
+    </a>
+  <a
+    href="ferramentas.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Ferramentas
+  </a>
+
+  <a
+    href="cultura.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Cultura e Inclusão
+  </a>
+    <a
+    href="impacto.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Impacto Social
+  </a>
+    <a
+    href="beneficios.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Benefícios
+  </a>
+    <a
+    href="bemestar.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Bem-estar
+  </a>
+    <a
+    href="rankImpacto.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Ranking
+  </a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="h-8 w-[1px] bg-white/10 mx-1"></div>
+<div class="flex flex-col items-end mr-2 hidden sm:flex">
+<span class="text-xs text-primary font-semibold">Nível 1</span>
+<span class="text-sm font-bold text-white">Impact Beginner</span>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-primary p-0.5 cursor-pointer hover:scale-105 transition-transform relative group">
+<img alt="User avatar profile picture" class="rounded-full h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmLEDCVKSMWIIehwQRQQJEgraKhy88pxiSgDn8TWAeKkqMWGhNPX9i-hI5Wpxn7jrLPk2DrdEF1ffBjMuWPuTk5k6TKFGP54nKHjZVMTSfYpANUlM24tncQw4SlEmf5L7WeZV73dBmj5qfeXaxkG7dqS62DGWK9UN8FHP3hHSoop2VxaklDTlh_0p1-YyZ8II8mZfh_zssqKxxB1ZteBhDnaKZP4bnbQpkGhLGAo-SX_hQwwh0yKVPSxtheZlTDEOVJj6Xvb6ECxU"/>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1400px] mx-auto px-6 py-8">
+<div class="mb-10 relative overflow-hidden rounded-3xl bg-card-dark border border-accent-dark">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -mr-32 -mt-32 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] -ml-20 -mb-20 pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-12 items-center">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 mb-4">
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-wider rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            Bem-vindo ao Connect +
+                        </span>
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6 tracking-tight">
+                        SUA JORNADA <br/>
+<span class="text-primary">CONNECT +</span>
+</h1>
+<p class="text-lg text-white/60 max-w-xl mb-8 leading-relaxed">
+                        Explore as categorias abaixo para iniciar suas missões, conectar-se com a cultura e desbloquear conquistas exclusivas no universo Oracle.
+                    </p>
+<!--
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(242,13,13,0.3)]">
+<span class="material-symbols-outlined">rocket_launch</span>
+                            Iniciar Jornada
+                        </button>
+</div>
+-->
+</div>
+<div class="lg:col-span-5">
+<div class="bg-background-dark/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 relative shadow-2xl">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-white font-bold text-lg">Seu Progresso Geral</h3>
+<p class="text-white/40 text-sm">Nível 1: Impact Beginner</p>
+</div>
+<span class="text-3xl font-black text-primary">35%</span>
+</div>
+<div class="w-full h-3 bg-white/5 rounded-full overflow-hidden mb-6">
+<div class="h-full bg-gradient-to-r from-primary to-orange-600 w-[35%] relative shadow-[0_0_10px_rgba(242,13,13,0.5)]">
+<div class="absolute right-0 top-0 bottom-0 w-0.5 bg-white"></div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-white/5 rounded-lg p-3">
+<div class="text-primary font-black text-xl">12</div>
+<div class="text-[10px] text-white/40 font-bold uppercase">Missões</div>
+</div>
+<div class="bg-white/5 rounded-lg p-3">
+<div class="text-white font-black text-xl">5</div>
+<div class="text-[10px] text-white/40 font-bold uppercase">Badges</div>
+</div>
+<div class="bg-white/5 rounded-lg p-3">
+<div class="text-white font-black text-xl">1.2k</div>
+<div class="text-[10px] text-white/40 font-bold uppercase">XP</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+<div class="lg:col-span-8 space-y-8">
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="text-2xl font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">category</span>
+                            Categorias de Missões
+                        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="md:col-span-2 group relative h-64 rounded-3xl overflow-hidden border border-white/10 cursor-pointer hover:border-primary/50 transition-all duration-500 shadow-lg hover:shadow-primary/10">
+<img alt="Impact background" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50" src="arquivos/image.png"/>
+<div class="absolute inset-0 bg-gradient-to-r from-card-dark via-card-dark/80 to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-center items-start z-10">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(242,13,13,0.4)]">
+<span class="material-symbols-outlined text-white text-2xl">volunteer_activism</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Missões de Impacto Social</h3>
+<p class="text-white/70 max-w-md mb-6 text-sm leading-relaxed">Engaje-se em projetos de voluntariado e iniciativas de sustentabilidade. Faça a diferença na comunidade e ganhe reconhecimento global.</p>
+<div class="flex items-center gap-4 w-full max-w-md">
+<div class="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4 rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-white/40">2/8 Completas</span>
+</div>
+</div>
+<div class="absolute bottom-8 right-8 hidden md:block">
+<span class="material-symbols-outlined text-white/20 text-6xl group-hover:text-primary/20 transition-colors duration-500 transform group-hover:scale-110">public</span>
+</div>
+</div>
+<div class="group bg-card-dark border border-white/10 rounded-3xl p-6 hover:bg-white/[0.02] hover:border-white/20 transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl text-white">business_center</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 rounded-lg bg-blue-900/30 text-blue-400 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">OnBoarding da sua Área</h3>
+<p class="text-white/50 text-sm mb-6 min-h-[40px]">Conheça seu time, ferramentas específicas e processos do departamento.</p>
+<a
+  href="missao1.html"
+  class="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5
+         text-white text-xs font-bold uppercase tracking-wider transition-colors
+         flex items-center justify-center gap-2"
+>
+  Explorar
+  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group bg-card-dark border border-white/10 rounded-3xl p-6 hover:bg-white/[0.02] hover:border-white/20 transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl text-white">school</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 rounded-lg bg-purple-900/30 text-purple-400 border border-purple-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">OnBoarding dos GenOs</h3>
+<p class="text-white/50 text-sm mb-6 min-h-[40px]">Trilha exclusiva para o programa GenO: mentorias, projetos e desafios.</p>
+<button class="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+                                    Explorar
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group bg-card-dark border border-white/10 rounded-3xl p-6 hover:bg-white/[0.02] hover:border-white/20 transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl text-white">spa</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 rounded-lg bg-green-900/30 text-green-400 border border-green-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">Missões de Bem-estar</h3>
+<p class="text-white/50 text-sm mb-6 min-h-[40px]">Equilíbrio vida-trabalho, mindfulness e dicas de saúde.</p>
+<a
+  href="bemestar.html"
+  class="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5
+         text-white text-xs font-bold uppercase tracking-wider transition-colors
+         flex items-center justify-center gap-2"
+>
+  Explorar
+  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+
+</div>
+</div>
+<div class="group bg-card-dark border border-white/10 rounded-3xl p-6 hover:bg-white/[0.02] hover:border-white/20 transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl text-white">redeem</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 rounded-lg bg-orange-900/30 text-orange-400 border border-orange-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">loyalty</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">Missões de Benefícios</h3>
+<p class="text-white/50 text-sm mb-6 min-h-[40px]">Entenda seu pacote de benefícios, descontos e vantagens exclusivas.</p>
+<a
+  href="beneficios.html"
+  class="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5
+         text-white text-xs font-bold uppercase tracking-wider transition-colors
+         flex items-center justify-center gap-2"
+>
+  Explorar
+  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="lg:col-span-4 space-y-8">
+<div class="bg-card-dark border border-white/10 rounded-3xl p-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-3 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl text-white">person</span>
+</div>
+<div class="flex items-center gap-4 mb-6 relative z-10">
+<div class="w-16 h-16 rounded-full border-2 border-primary p-0.5">
+<img alt="User avatar" class="rounded-full w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmLEDCVKSMWIIehwQRQQJEgraKhy88pxiSgDn8TWAeKkqMWGhNPX9i-hI5Wpxn7jrLPk2DrdEF1ffBjMuWPuTk5k6TKFGP54nKHjZVMTSfYpANUlM24tncQw4SlEmf5L7WeZV73dBmj5qfeXaxkG7dqS62DGWK9UN8FHP3hHSoop2VxaklDTlh_0p1-YyZ8II8mZfh_zssqKxxB1ZteBhDnaKZP4bnbQpkGhLGAo-SX_hQwwh0yKVPSxtheZlTDEOVJj6Xvb6ECxU"/>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Você</h3>
+<div class="text-primary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                Impact Beginner
+                            </div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 relative z-10">
+<div class="bg-background-dark p-3 rounded-xl border border-white/5 text-center">
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-wider">XP Total</span>
+<div class="text-2xl font-black text-white">12.450</div>
+</div>
+<div class="bg-background-dark p-3 rounded-xl border border-white/5 text-center">
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-wider">Ranking</span>
+<div class="text-2xl font-black text-primary">#42</div>
+</div>
+</div>
+<a
+  href="rankImpacto.html"
+  class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5
+         text-white text-sm font-bold transition-all
+         flex items-center justify-center gap-2 relative z-10"
+>
+  Ver Ranking Completo
+  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+
+</div>
+
+<!--
+<div class="bg-card-dark border border-white/10 rounded-3xl p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-white font-bold text-lg">Conquistas Recentes</h3>
+<span class="text-xs text-white/40 font-bold uppercase">3/12</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="aspect-square bg-gradient-to-br from-yellow-600/20 to-yellow-900/20 rounded-xl border border-yellow-700/30 flex items-center justify-center relative group cursor-help">
+<span class="material-symbols-outlined text-yellow-500 text-2xl drop-shadow-[0_0_5px_rgba(234,179,8,0.5)]">star</span>
+<div class="absolute bottom-full mb-2 right-0 bg-black text-white text-xs p-2 rounded w-32 text-center hidden group-hover:block z-50 pointer-events-none border border-white/10">
+<span class="font-bold block text-yellow-500">First Star</span>
+                                Complete sua primeira missão.
+                            </div>
+</div>
+<div class="aspect-square bg-gradient-to-br from-blue-600/20 to-blue-900/20 rounded-xl border border-blue-700/30 flex items-center justify-center relative group cursor-help">
+<span class="material-symbols-outlined text-blue-400 text-2xl drop-shadow-[0_0_5px_rgba(96,165,250,0.5)]">rocket_launch</span>
+</div>
+<div class="aspect-square bg-gradient-to-br from-green-600/20 to-green-900/20 rounded-xl border border-green-700/30 flex items-center justify-center relative group cursor-help">
+<span class="material-symbols-outlined text-green-400 text-2xl drop-shadow-[0_0_5px_rgba(74,222,128,0.5)]">handshake</span>
+</div>
+<div class="aspect-square bg-white/5 rounded-xl border border-white/5 flex items-center justify-center grayscale opacity-30">
+<span class="material-symbols-outlined text-white text-2xl">school</span>
+</div>
+<div class="aspect-square bg-white/5 rounded-xl border border-white/5 flex items-center justify-center grayscale opacity-30">
+<span class="material-symbols-outlined text-white text-2xl">emoji_events</span>
+</div>
+<div class="aspect-square bg-white/5 rounded-xl border border-white/5 flex items-center justify-center grayscale opacity-30">
+<span class="material-symbols-outlined text-white text-2xl">diamond</span>
+</div>
+<div class="aspect-square bg-white/5 rounded-xl border border-white/5 flex items-center justify-center grayscale opacity-30">
+<span class="material-symbols-outlined text-white text-2xl">bolt</span>
+</div>
+<div class="aspect-square bg-white/5 rounded-xl border border-white/5 flex items-center justify-center grayscale opacity-30">
+<span class="material-symbols-outlined text-white text-2xl">psychology</span>
+</div>
+</div>
+</div>
+-->
+<div class="bg-card-dark border border-white/10 rounded-3xl p-6">
+  <h3 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary">apps</span>
+    Ferramentas Rápidas
+  </h3>
+
+  <div class="space-y-3">
+
+    <!-- Slack -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-purple-900/20 p-2 rounded text-purple-400">
+          <span class="material-symbols-outlined text-sm">forum</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          Oracle Slack
+        </span>
+      </div>
+    </a>
+
+    <!-- Outlook -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-blue-900/20 p-2 rounded text-blue-400">
+          <span class="material-symbols-outlined text-sm">mail</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          Microsoft Outlook (Webmail)
+        </span>
+      </div>
+    </a>
+
+    <!-- HCM -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-green-900/20 p-2 rounded text-green-400">
+          <span class="material-symbols-outlined text-sm">groups</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          HCM Cloud (RH)
+        </span>
+      </div>
+    </a>
+
+    <!-- MyLearning -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-yellow-900/20 p-2 rounded text-yellow-400">
+          <span class="material-symbols-outlined text-sm">school</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          MyLearning (Treinamentos)
+        </span>
+      </div>
+    </a>
+
+    <!-- Oracle Chat -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-red-900/20 p-2 rounded text-red-400">
+          <span class="material-symbols-outlined text-sm">smart_toy</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          Oracle Chat (GenAI)
+        </span>
+      </div>
+    </a>
+
+    <!-- Zoom -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-blue-900/20 p-2 rounded text-blue-400">
+          <span class="material-symbols-outlined text-sm">videocam</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          Zoom (Reuniões)
+        </span>
+      </div>
+    </a>
+
+    <!-- OTube -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-orange-900/20 p-2 rounded text-orange-400">
+          <span class="material-symbols-outlined text-sm">play_circle</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          OTube (Vídeos Internos)
+        </span>
+      </div>
+    </a>
+
+    <!-- VPN -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-slate-900/40 p-2 rounded text-slate-300">
+          <span class="material-symbols-outlined text-sm">vpn_lock</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          VPN Pulse Secure
+        </span>
+      </div>
+    </a>
+
+    <!-- RH -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-pink-900/20 p-2 rounded text-pink-400">
+          <span class="material-symbols-outlined text-sm">support_agent</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          Pergunte ao RH
+        </span>
+      </div>
+    </a>
+
+    <!-- MyOracle -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-indigo-900/20 p-2 rounded text-indigo-400">
+          <span class="material-symbols-outlined text-sm">public</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          MyOracle (Intranet)
+        </span>
+      </div>
+    </a>
+
+    <!-- ServiceNow -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-teal-900/20 p-2 rounded text-teal-400">
+          <span class="material-symbols-outlined text-sm">confirmation_number</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          ServiceNow (Tickets)
+        </span>
+      </div>
+    </a>
+
+    <!-- iExpense / Concur -->
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors border border-white/5 group">
+      <div class="flex items-center gap-3">
+        <div class="bg-emerald-900/20 p-2 rounded text-emerald-400">
+          <span class="material-symbols-outlined text-sm">paid</span>
+        </div>
+        <span class="text-sm font-medium text-white group-hover:text-primary">
+          iExpense & Concur
+        </span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</div>
+</div>
+<div class="bg-[#0f0505] border-t border-accent-dark rounded-2xl py-8 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-white/30 text-sm">Powered by</span>
+<span class="text-white/60 font-bold tracking-tight">Connect + Gamification Engine</span>
+</div>
+<div class="flex gap-6 text-sm text-white/40">
+<a class="hover:text-white transition-colors" href="#">Suporte</a>
+<a class="hover:text-white transition-colors" href="#">Feedback</a>
+<a class="hover:text-white transition-colors" href="#">Privacidade</a>
+</div>
+</div>
+</div>
+</main>
+
+<script src="js/auth.js"></script>
+<script>
+  requireAuth();
+
+  const user = JSON.parse(localStorage.getItem("cp_user"));
+
+  if (user) {
+    const el = document.getElementById("user-name");
+    if (el) el.textContent = user.name;
+  }
+</script>
+</body></html>

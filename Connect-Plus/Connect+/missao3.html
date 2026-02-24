@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect+ — M3 — Fazer Certificações</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#1C1C1C',        // Fundo principal
+            surface: '#242424',   // Superfícies / cards
+            accent: '#D64B36',    // Vermelho queimado (destaque)
+            white: '#FFFFFF',     // Textos principais
+            muted: '#BDBDBD',     // Textos secundários
+          },
+          borderRadius: {
+            'md': '12px',        // Bordas arredondadas padrão
+          },
+          boxShadow: {
+            'aria-elev-1': '0 6px 20px rgba(0,0,0,0.6)',  // Elevação
+          },
+          spacing: {
+            'gap-md': '16px',    // Espaçamento base
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-bg text-white antialiased font-sans">
+
+<!-- NAVBAR -->
+<nav class="w-full border-b border-white/10 mb-8">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-5 rounded-full bg-transparent shadow-[inset_0_0_0_4px_#D64B36]"></div>
+      <h1 class="text-xl font-bold text-accent">Connect+</h1>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+      <a href="home.html" class="hover:text-accent transition">Home</a>
+      <a href="ferramentas.html" class="hover:text-accent transition">Ferramentas</a>
+      <a href="cultura.html" class="hover:text-accent transition">Cultura Oracle</a>
+      <a href="impacto.html" class="hover:text-accent transition">Impacto Social</a>
+      <a href="beneficios.html" class="hover:text-accent transition">Benefícios</a>
+      <a href="bemestar.html" class="hover:text-accent transition">Bem-estar</a>
+      <a href="perfil.html" class="hover:text-accent transition">Meu Perfil</a>
+    </div>
+
+    <!-- Mobile button -->
+    <button id="menu-btn" class="md:hidden text-accent">
+      <span class="material-icons-outlined text-3xl">Menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden flex-col bg-surface border-t border-white/10 px-4 py-4 text-sm">
+    <a href="index1.html" class="py-2 hover:text-accent">Missões</a>
+    <a href="predio.html" class="py-2 hover:text-accent">Explorar o Prédio</a>
+    <a href="ferramentas.html" class="py-2 hover:text-accent">Ferramentas</a>
+    <a href="cultura.html" class="py-2 hover:text-accent">Cultura Oracle</a>
+    <a href="impacto.html" class="py-2 hover:text-accent">Impacto Social</a>
+    <a href="beneficios.html" class="py-2 hover:text-accent">Benefícios</a>
+    <a href="bemestar.html" class="py-2 hover:text-accent">Bem-estar</a>
+    <a href="perfil.html" class="py-2 hover:text-accent">Meu Perfil</a>
+  </div>
+</nav>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div class="max-w-7xl mx-auto p-6">
+
+  <header class="mb-12">
+    <h2 class="text-4xl font-bold text-white">
+      M3 — Fazer Certificações
+    </h2>
+    <p class="text-muted text-lg">Explore os cursos e certificações disponíveis em diferentes áreas da Oracle para conhecer o processo de aprendizado e desenvolvimento profissional.</p>
+  </header>
+
+  <!-- Progresso da Missão -->
+  <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3 mb-12">
+    <div class="flex justify-between mb-4">
+      <div class="flex gap-3 items-center">
+        <span class="material-icons-outlined text-accent text-2xl">school</span>
+        <h3 class="font-semibold text-white">Progresso da Missão</h3>
+      </div>
+      <span class="text-sm text-muted">0 / 1 Tarefa</span>
+    </div>
+    <div class="w-full bg-surface h-3 rounded-full">
+      <div class="bg-accent h-3 rounded-full" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- Descrição da Missão -->
+  <section class="mb-12">
+    <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+      <h3 class="text-lg font-bold text-white mb-4">Sobre a Missão</h3>
+      <p class="text-muted text-sm leading-relaxed">
+        Esta missão tem como objetivo apresentar as certificações e cursos oferecidos pela Oracle em diversas áreas. Ao explorar essas opções, você entenderá como o aprendizado contínuo é fundamental para o crescimento profissional na empresa. Navegue pelas áreas abaixo e conheça os caminhos de desenvolvimento disponíveis.
+      </p>
+    </div>
+  </section>
+
+  <!-- Áreas e Certificações -->
+  <section class="mb-12">
+    <h3 class="text-2xl font-bold text-white mb-8">Áreas e Certificações Disponíveis</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Localizações -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Localizações</h4>
+        <p class="text-sm text-muted mb-4">Área focada em adaptar soluções Oracle para diferentes regiões geográficas, incluindo suporte a idiomas, regulamentações locais e internacionalização de produtos como ERP Cloud, garantindo conformidade global.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Foundation Receivables e futuramente Payables</li>
+          <li>• Become a Certified Financials: Receivables</li>
+          <li>• Become a Certified Financials: Payables</li>
+          <li>• Oracle AI Agent Studio for Fusion Applications Developers</li>
+          <li>• Become an OCI Generative AI Professional</li>
+          <li>• Earn the Oracle Database 23ai SQL Associate Credential</li>
+          <li>• Receivables (profissional)</li>
+          <li>• OCI Foundations</li>
+          <li>• OCI AI Foundation</li>
+          <li>• AI for You</li>
+          <li>• Oracle Fusion Cloud Financials: Receivables Professional</li>
+          <li>• Oracle Fusion Cloud Financials: Payables Professional</li>
+        </ul>
+      </div>
+
+      <!-- Consultoria ERP -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Consultoria ERP</h4>
+        <p class="text-sm text-muted mb-4">Especializada em consultoria para sistemas de Planejamento de Recursos Empresariais (ERP) da Oracle, como Oracle ERP Cloud, ajudando clientes a implementar e otimizar processos financeiros, de cadeia de suprimentos e gestão geral.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Become a General Ledger Implementer / Accounting Hub Implementer</li>
+        </ul>
+      </div>
+
+      <!-- NetSuite - Sales (SDR) -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">NetSuite - Sales (SDR)</h4>
+        <p class="text-sm text-muted mb-4">Relacionada ao NetSuite (plataforma de ERP/CRM adquirida pela Oracle), com foco em vendas e desenvolvimento de leads (Sales Development Representatives - SDR), visando geração de demanda e expansão de clientes.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Cursos de SDR / Geração de leads</li>
+        </ul>
+      </div>
+
+      <!-- Consultoria de Retail -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Consultoria de Retail</h4>
+        <p class="text-sm text-muted mb-4">Consultoria para soluções de varejo da Oracle, como Oracle Retail, que inclui ferramentas para merchandising, gestão de inventário e experiência do cliente em lojas físicas e online. (Confidential - Oracle Internal)</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• RMS</li>
+        </ul>
+      </div>
+
+      <!-- ERP Cloud Consulting -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">ERP Cloud Consulting</h4>
+        <p class="text-sm text-muted mb-4">Consultoria dedicada ao Oracle ERP Cloud, oferecendo implementação, personalização e suporte para módulos como finanças, compras e gestão de projetos em ambientes de nuvem.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Inventory Implementer (Professional)</li>
+          <li>• Warehouse Management System Implementer (Professional)</li>
+        </ul>
+      </div>
+
+      <!-- Comercial / Vendas / Acquire -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Comercial / Vendas / Acquire</h4>
+        <p class="text-sm text-muted mb-4">Área de vendas e aquisição de clientes, envolvendo estratégias para promover produtos Oracle, como nuvem, IA e ERP, com foco em prospecção, negociações e expansão de mercado.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• OCI Foundations e IA</li>
+          <li>• OCI foundations</li>
+          <li>• OCI AI foundations</li>
+          <li>• OCI - Certificações de IA, Data Science e Vector Search</li>
+          <li>• Nenhum curso mencionado</li>
+        </ul>
+      </div>
+
+      <!-- Consulting Cloud Solutions -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Consulting Cloud Solutions</h4>
+        <p class="text-sm text-muted mb-4">Consultoria em soluções de nuvem da Oracle, incluindo Oracle Cloud Infrastructure (OCI), ajudando empresas a migrar, otimizar e integrar aplicações na nuvem para maior eficiência e escalabilidade.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• APEX</li>
+          <li>• OCI e AI foundations</li>
+        </ul>
+      </div>
+
+      <!-- Consultoria em Comunicações -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Consultoria em Comunicações</h4>
+        <p class="text-sm text-muted mb-4">Focada em soluções de comunicações da Oracle, como Oracle Communications, que abrange telecomunicações, billing e gestão de redes para provedores de serviços. (Confidential - Oracle Internal)</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Fusion Geral</li>
+          <li>• Receivables de ERP</li>
+          <li>• AI</li>
+        </ul>
+      </div>
+
+      <!-- AI / IA -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">AI / IA</h4>
+        <p class="text-sm text-muted mb-4">Área dedicada à Inteligência Artificial da Oracle, incluindo ferramentas como OCI Generative AI, AI Foundations e aplicações em nuvem, para desenvolvimento de modelos de IA, automação e análise de dados.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• OCI Foundations</li>
+          <li>• AI Foundations</li>
+          <li>• OCI Cloud e IA Professional</li>
+        </ul>
+      </div>
+
+      <!-- Ecossistema de Inovação -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Ecossistema de Inovação</h4>
+        <p class="text-sm text-muted mb-4">Relacionada a iniciativas de inovação da Oracle, como Oracle Innovation Labs, promovendo parcerias, startups e ecossistemas para desenvolver novas tecnologias e soluções disruptivas.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Nenhum curso mencionado</li>
+        </ul>
+      </div>
+
+      <!-- Retail -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">Retail</h4>
+        <p class="text-sm text-muted mb-4">Especializada em soluções de varejo da Oracle, abrangendo merchandising, gestão de estoques e analytics para otimizar operações em lojas e e-commerce.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Aprofundamento do básico ao avançado em Retail Merchandising System</li>
+        </ul>
+      </div>
+
+      <!-- OCS -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-3">OCS</h4>
+        <p class="text-sm text-muted mb-4">Área ligada a Oracle Cloud Services ou sistemas de gestão de pedidos (Order to Cash - O2C), incluindo módulos como Order Management e Transportation Management, para otimizar processos de vendas e logística.</p>
+        <h5 class="font-semibold text-white mb-2">Certificações/Cursos:</h5>
+        <ul class="text-sm text-muted space-y-1">
+          <li>• Order management o2c + transportation management</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Botão de Finalizar -->
+  <section class="text-center">
+    <button class="flex items-center justify-center gap-2 p-2.5 px-6 rounded-[10px] bg-accent text-white border-none cursor-pointer font-semibold shadow-[0_6px_18px_rgba(214,75,54,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(214,75,54,0.14)] active:translate-y-0 mx-auto">
+      <span class="material-icons-outlined">done</span> Finalizar Missão e Ganhar 50 XP
+    </button>
+  </section>
+
+  <!-- Recompensas -->
+  <section class="mt-12">
+    <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+      <h3 class="text-lg font-bold text-white mb-4">Recompensas</h3>
+      <div class="flex items-center gap-3">
+        <span class="material-icons-outlined text-accent text-2xl">military_tech</span>

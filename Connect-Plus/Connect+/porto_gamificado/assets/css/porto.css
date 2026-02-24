@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Sora', sans-serif;
+    background: #f0f4f8;
+    color: #003566;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin: 20px 0;
+}
+
+h1 {
+    font-weight: 400;
+    color: #003566;
+}
+
+h1 strong { color: #00a1e4; }
+
+#mapa {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 53, 102, 0.1);
+    border: 1px solid rgba(0, 161, 228, 0.2);
+    background-image: radial-gradient(#e1e8ef 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+}
+
+.icone {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #00a1e4;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(0, 161, 228, 0.3);
+}
+
+.icone i { font-size: 24px; margin-bottom: 5px; }
+.icone span { font-size: 10px; font-weight: 600; text-transform: uppercase; }
+
+.icone:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: #003566;
+    box-shadow: 0 12px 30px rgba(0, 53, 102, 0.4);
+}
+
+.icone.respondido {
+    background: #28a745;
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+}
+
+#pontos {
+    background: #003566;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Flashcard Overlay */
+#flashcard {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 53, 102, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+#flashcard .card {
+    width: 420px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner { transform: rotateY(180deg); }
+
+.card-front, .card-back {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card-back { transform: rotateY(180deg); position: absolute; top: 0; left: 0; width: 100%; height: 100%; box-sizing: border-box; justify-content: center; border: 2px solid #28a745; }
+
+.opcao-resposta {
+    width: 100%;
+    margin: 5px 0;
+    padding: 15px;
+    border: 1px solid #e1e8ef;
+    background: #f8fbff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    color: #003566;
+    transition: all 0.2s;
+}
+
+.opcao-resposta:hover:not(:disabled) {
+    background: #00a1e4;
+    color: white;
+    border-color: #00a1e4;
+}
+
+#btnFechar, #btnVoltar {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: #00a1e4;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}

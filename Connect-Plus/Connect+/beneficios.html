@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Benefícios Oracle Interativo</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#f20d0d",
+        "background-dark": "#0a0a0a",
+      },
+      fontFamily: {
+        display: ["Public Sans", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+
+<style>
+.custom-scrollbar::-webkit-scrollbar{width:6px}
+.custom-scrollbar::-webkit-scrollbar-track{background:#0a0a0a}
+.custom-scrollbar::-webkit-scrollbar-thumb{background:#331111;border-radius:10px}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover{background:#f20d0d}
+</style>
+</head>
+
+<body class="bg-background-dark text-white h-screen flex flex-col overflow-hidden font-display">
+
+<!-- NAVBAR ORIGINAL -->
+<header class="sticky top-0 z-50 w-full border-b border-accent-dark bg-background-dark/95 backdrop-blur-md">
+<div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-primary">
+</div>
+<h1 class="text-white font-bold text-xl tracking-tight">Connect <span class="text-primary font-white">+</span>Benefits</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+    <a href="home.html" class="text-white hover:text-primary text-sm font-bold transition-colors">
+    Home
+    </a>
+  <a
+    href="ferramentas.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Ferramentas
+  </a>
+
+  <a
+    href="cultura.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Cultura e Inclusão
+  </a>
+    <a
+    href="impacto.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Impacto Social
+  </a>
+    <a
+    href="beneficios.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Benefícios
+  </a>
+    <a
+    href="bemestar.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Bem-estar
+  </a>
+    <a
+    href="rankImpacto.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Ranking
+  </a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="h-8 w-[1px] bg-white/10 mx-1"></div>
+<div class="flex flex-col items-end mr-2 hidden sm:flex">
+<span class="text-xs text-primary font-semibold">Nível 1</span>
+<span class="text-sm font-bold text-white">Impact Beginner</span>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-primary p-0.5 cursor-pointer hover:scale-105 transition-transform relative group">
+<img alt="User avatar profile picture" class="rounded-full h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmLEDCVKSMWIIehwQRQQJEgraKhy88pxiSgDn8TWAeKkqMWGhNPX9i-hI5Wpxn7jrLPk2DrdEF1ffBjMuWPuTk5k6TKFGP54nKHjZVMTSfYpANUlM24tncQw4SlEmf5L7WeZV73dBmj5qfeXaxkG7dqS62DGWK9UN8FHP3hHSoop2VxaklDTlh_0p1-YyZ8II8mZfh_zssqKxxB1ZteBhDnaKZP4bnbQpkGhLGAo-SX_hQwwh0yKVPSxtheZlTDEOVJj6Xvb6ECxU"/>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></div>
+</div>
+</div>
+</div>
+</header>
+
+<main class="flex flex-1 overflow-hidden">
+
+<!-- SIDEBAR -->
+<aside class="w-80 border-r border-white/10 bg-[#0f0707] flex flex-col shrink-0">
+
+<div class="p-6 border-b border-white/10 bg-[#120808]">
+<h1 class="text-white text-xl font-bold">Benefit Catalog</h1>
+<p class="text-[#ba9c9c] text-sm mt-1">Select to view details</p>
+</div>
+
+<nav class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-3">
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl bg-primary/10 border border-primary/30"
+data-benefit="porto">
+<div class="size-10 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<span class="font-bold">Porto Seguro</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="itau">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<span>Banco Itaú</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="gympass">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<span>Gympass</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="education">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">school</span>
+</div>
+<span>Education Aid</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="retirement">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">savings</span>
+</div>
+<span>Retirement Fund</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="meal">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span>Meal Voucher</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="mobility">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<span>Mobility Allowance</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="home">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">home_work</span>
+</div>
+<span>Home Office Stipend</span>
+</button>
+
+<button class="benefit-btn w-full text-left flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 border border-transparent"
+data-benefit="language">
+<div class="size-10 rounded-lg bg-[#221010] flex items-center justify-center">
+<span class="material-symbols-outlined">language</span>
+</div>
+<span>Language Courses</span>
+</button>
+
+</nav>
+</aside>
+
+<!-- MAIN PANEL -->
+<section class="flex-1 overflow-y-auto custom-scrollbar">
+
+<div class="relative w-full h-[450px]">
+
+<div id="benefit-banner" class="absolute inset-0 bg-cover bg-center"
+style="background-image:linear-gradient(0deg,#0a0a0a 0%,rgba(10,10,10,.6) 50%,transparent 100%),url('https://lh3.googleusercontent.com/aida-public/AB6AXuAphWmriHnaBh19W7Rb9zIdsCmHeCdxtndFyPq02U7xTm8LinuqBaLurKIQj_8wc5m6M6wPudmRqcTH0g4XUWmafGstv7-_6eam69_LoiFmavrZ6Qs8d2HAsqAekcEeqN2wjm8rIFfwtKP6JuImWo6tKHaHoOBKd7tirrF-DaAVet7BQXZongk7L9W0INBJKKRcIu1VlyzRLlzebWUL6RbsHbWfZcnx9zT1_AiCkMzRRHxJpcfKxp4-6R3nKnRZcgvu0CWdKeoJ79k');">
+</div>
+
+<div class="absolute inset-0 flex flex-col justify-end p-12">
+
+<span id="benefit-category"
+class="px-3 py-1 bg-white/10 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded border border-white/10 mb-6 transition-all">
+Health & Dental
+</span>
+
+<h2 id="benefit-title" class="text-white text-7xl font-black tracking-tighter leading-[0.9] mb-6">
+Porto Seguro <br> Health Plan
+</h2>
+
+<p id="benefit-description" class="text-[#ba9c9c] text-xl max-w-2xl">
+Comprehensive medical coverage designed for Oracle employees and their dependents.
+</p>
+
+</div>
+</div>
+
+<div class="px-12 py-16">
+<h3 class="text-2xl font-bold mb-4">Plan Specifications</h3>
+<p class="text-[#ba9c9c] max-w-3xl">
+All benefits are customizable according to your employment plan and region.
+</p>
+</div>
+
+</section>
+</main>
+
+<!-- SCRIPT -->
+<script>
+const benefits = {
+  porto:{title:"Porto Seguro <br> Health Plan",description:"Comprehensive medical coverage designed for Oracle employees and their dependents.",category:"Health & Dental",image:"https://lh3.googleusercontent.com/aida-public/AB6AXuAphWmriHnaBh19W7Rb9zIdsCmHeCdxtndFyPq02U7xTm8LinuqBaLurKIQj_8wc5m6M6wPudmRqcTH0g4XUWmafGstv7-_6eam69_LoiFmavrZ6Qs8d2HAsqAekcEeqN2wjm8rIFfwtKP6JuImWo6tKHaHoOBKd7tirrF-DaAVet7BQXZongk7L9W0INBJKKRcIu1VlyzRLlzebWUL6RbsHbWfZcnx9zT1_AiCkMzRRHxJpcfKxp4-6R3nKnRZcgvu0CWdKeoJ79k"},
+  gympass:{title:"Gympass <br> Well-being Program",description:"Access to gyms and wellness services.",category:"Well-being",image:"https://images.unsplash.com/photo-1554284126-aa88f22d8b74"},
+  itau:{title:"Banco Itaú <br> Financial Benefits",description:"Corporate banking services.",category:"Finance",image:"https://images.unsplash.com/photo-1554224154-22dec7ec8818"},
+  education:{title:"Education Aid",description:"Support for education.",category:"Growth",image:"https://images.unsplash.com/photo-1523050854058-8df90110c9f1"},
+  retirement:{title:"Retirement Fund",description:"Long term pension plan.",category:"Future",image:"https://images.unsplash.com/photo-1554224155-6726b3ff858f"},
+  meal:{title:"Meal Voucher",description:"Daily meal allowance.",category:"Daily",image:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"},
+  mobility:{title:"Mobility Allowance",description:"Transport benefits.",category:"Transport",image:"https://images.unsplash.com/photo-1503376780353-7e6692767b70"},
+  home:{title:"Home Office Stipend",description:"Remote work support.",category:"Workspace",image:"https://images.unsplash.com/photo-1587614382346-4ec70e388b28"},
+  language:{title:"Language Courses",description:"Language learning.",category:"Education",image:"https://images.unsplash.com/photo-1529070538774-1843cb3265df"}
+};
+
+const buttons=document.querySelectorAll(".benefit-btn");
+const titleEl=document.getElementById("benefit-title");
+const descEl=document.getElementById("benefit-description");
+const catEl=document.getElementById("benefit-category");
+const bannerEl=document.getElementById("benefit-banner");
+
+buttons.forEach(btn=>{
+btn.onclick=()=>{
+buttons.forEach(b=>{
+b.classList.remove("bg-primary/10","border-primary/30");
+b.classList.add("border-transparent");
+});
+btn.classList.add("bg-primary/10","border-primary/30");
+
+const data=benefits[btn.dataset.benefit];
+if(!data)return;
+
+titleEl.innerHTML=data.title;
+descEl.textContent=data.description;
+catEl.textContent=data.category;
+
+bannerEl.style.backgroundImage=`linear-gradient(0deg,#0a0a0a 0%,rgba(10,10,10,.6) 50%,transparent 100%),url('${data.image}')`;
+};
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect+ — Alianças e Canais</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#1C1C1C',
+            surface: '#242424',
+            accent: '#D64B36',
+            muted: '#BDBDBD',
+          },
+          borderRadius: {
+            md: '12px',
+          },
+          boxShadow: {
+            elev: '0 8px 24px rgba(0,0,0,0.55)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-bg text-white font-sans antialiased">
+
+<!-- NAVBAR -->
+<nav class="border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-5 rounded-full shadow-[inset_0_0_0_4px_#D64B36]"></div>
+      <span class="text-xl font-bold text-accent">Connect+</span>
+    </div>
+
+    <div class="hidden md:flex gap-6 text-sm font-medium text-muted">
+      <a href="home.html" class="hover:text-accent">Home</a>
+      <a href="index1.html" class="hover:text-accent">Missões</a>
+      <a href="ferramentas.html" class="hover:text-accent">Ferramentas</a>
+      <a href="cultura.html" class="hover:text-accent">Cultura Oracle</a>
+      <a href="impacto.html" class="hover:text-accent">Impacto Social</a>
+      <a href="beneficios.html" class="hover:text-accent">Benefícios</a>
+      <a href="bemestar.html" class="hover:text-accent">Bem-estar</a>
+      <a href="perfil.html" class="hover:text-accent">Meu Perfil</a>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<main class="max-w-7xl mx-auto px-6 py-10">
+
+  <!-- Voltar -->
+  <div class="mb-8">
+    <a href="missao1.html"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-surface rounded-md text-sm font-medium hover:bg-accent transition">
+      <span class="material-icons-outlined text-base">arrow_back</span>
+      Voltar
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header class="text-center max-w-3xl mx-auto mb-14">
+    <h1 class="text-4xl font-bold mb-4">Alianças e Canais</h1>
+    <p class="text-accent text-xl font-semibold mb-4">Bem-vindo ao Onboarding</p>
+    <p class="text-muted leading-relaxed">
+      Você fará parte da área responsável por parcerias estratégicas, canais indiretos
+      e expansão de mercado. Aqui começa sua jornada de aprendizado e impacto na Oracle.
+    </p>
+  </header>
+
+  <!-- Card explicativo -->
+  <section class="mb-14">
+    <div class="bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <h2 class="text-2xl font-bold mb-3">O que é a área?</h2>
+      <p class="text-muted leading-relaxed text-sm">
+        Alianças e Canais conecta a Oracle a parceiros estratégicos globais,
+        impulsionando vendas indiretas, inovação conjunta e crescimento sustentável.
+        A atuação envolve estratégia, relacionamento, análise de mercado e execução.
+      </p>
+    </div>
+  </section>
+
+  <!-- Abas -->
+  <section>
+    <div class="flex justify-center gap-3 mb-8">
+      <button id="tab-sobre" class="tab-btn px-5 py-2 rounded-md bg-accent font-semibold text-sm">Sobre</button>
+      <button id="tab-cursos" class="tab-btn px-5 py-2 rounded-md bg-surface text-sm">Cursos</button>
+      <button id="tab-videos" class="tab-btn px-5 py-2 rounded-md bg-surface text-sm">Vídeos</button>
+      <button id="tab-recursos" class="tab-btn px-5 py-2 rounded-md bg-surface text-sm">Recursos</button>
+    </div>
+
+    <!-- Sobre -->
+    <div id="content-sobre" class="tab-content bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <p class="text-muted text-sm leading-relaxed">
+        Nesta área, você desenvolverá habilidades de negociação, estratégia de canais,
+        gestão de parceiros e análise de dados, com oportunidades de crescimento
+        em carreira técnica e comercial.
+      </p>
+    </div>
+
+    <!-- Cursos -->
+    <div id="content-cursos" class="tab-content hidden">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="bg-surface p-5 rounded-md border border-white/10 hover:border-accent transition">
+          <h4 class="font-semibold mb-2">OCI Foundations</h4>
+          <p class="text-muted text-sm mb-4">Fundamentos da Oracle Cloud.</p>
+          <a href="https://mylearn.oracle.com" target="_blank"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-md text-sm font-semibold hover:bg-accent/80">
+            <span class="material-icons-outlined text-base">school</span>
+            Acessar
+          </a>
+        </div>
+
+        <div class="bg-surface p-5 rounded-md border border-white/10 hover:border-accent transition">
+          <h4 class="font-semibold mb-2">OCI AI Foundations</h4>
+          <p class="text-muted text-sm mb-4">Introdução à IA na OCI.</p>
+          <a href="https://mylearn.oracle.com" target="_blank"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-md text-sm font-semibold hover:bg-accent/80">
+            <span class="material-icons-outlined text-base">school</span>
+            Acessar
+          </a>
+        </div>
+
+        <div class="bg-surface p-5 rounded-md border border-white/10 hover:border-accent transition">
+          <h4 class="font-semibold mb-2">Winning with Partners</h4>
+          <p class="text-muted text-sm mb-4">Estratégias de parceria.</p>
+          <a href="https://mylearn.oracle.com" target="_blank"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-md text-sm font-semibold hover:bg-accent/80">
+            <span class="material-icons-outlined text-base">school</span>
+            Acessar
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Vídeos -->
+    <div id="content-videos" class="tab-content hidden bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <p class="text-muted text-sm mb-4">Vídeo de boas-vindas à área:</p>
+      <iframe class="w-full h-72 rounded-md"
+        src="https://www.youtube.com/embed/D-TUEdZVwlU"
+        allowfullscreen></iframe>
+    </div>
+
+    <!-- Recursos -->
+    <div id="content-recursos" class="tab-content hidden bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <ul class="list-disc list-inside text-muted text-sm space-y-2">
+        <li>Manual de Parcerias Estratégicas</li>
+        <li>Guia de Gestão de Canais</li>
+        <li>Ferramentas de Análise de Mercado</li>
+      </ul>
+    </div>
+
+  </section>
+</main>
+
+<!-- JS abas -->
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('bg-accent'));
+      tabs.forEach(t => t.classList.add('bg-surface'));
+      tab.classList.add('bg-accent');
+      tab.classList.remove('bg-surface');
+
+      contents.forEach(c => c.classList.add('hidden'));
+      document.getElementById(tab.id.replace('tab-', 'content-')).classList.remove('hidden');
+    });
+  });
+</script>
+
+</body>
+</html>

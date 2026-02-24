@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect+ — Customer Success Services (CSS)</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#1C1C1C',
+            surface: '#242424',
+            accent: '#D64B36',
+            muted: '#BDBDBD',
+          },
+          borderRadius: {
+            md: '12px',
+          },
+          boxShadow: {
+            elev: '0 8px 24px rgba(0,0,0,0.55)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-bg text-white font-sans antialiased">
+
+<!-- NAVBAR -->
+<nav class="border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-5 rounded-full shadow-[inset_0_0_0_4px_#D64B36]"></div>
+      <span class="text-xl font-bold text-accent">Connect+</span>
+    </div>
+
+    <div class="hidden md:flex gap-6 text-sm font-medium text-muted">
+      <a href="home.html" class="hover:text-accent">Home</a>
+      <a href="ferramentas.html" class="hover:text-accent">Ferramentas</a>
+      <a href="cultura.html" class="hover:text-accent">Cultura Oracle</a>
+      <a href="impacto.html" class="hover:text-accent">Impacto Social</a>
+      <a href="beneficios.html" class="hover:text-accent">Benefícios</a>
+      <a href="bemestar.html" class="hover:text-accent">Bem-estar</a>
+      <a href="perfil.html" class="hover:text-accent">Meu Perfil</a>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<main class="max-w-7xl mx-auto px-6 py-10">
+
+  <!-- Voltar -->
+  <div class="mb-8">
+    <a href="missao1.html"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-surface rounded-md text-sm font-medium hover:bg-accent transition">
+      <span class="material-icons-outlined text-base">arrow_back</span>
+      Voltar
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header class="text-center max-w-3xl mx-auto mb-14">
+    <h1 class="text-4xl font-bold mb-4">Customer Success Services</h1>
+    <p class="text-accent text-xl font-semibold mb-4">Bem-vindo ao Onboarding da Área</p>
+    <p class="text-muted leading-relaxed">
+      A área de CSS é responsável por garantir que os clientes obtenham o máximo valor
+      das soluções Oracle, promovendo adoção, sucesso contínuo e retenção.
+    </p>
+  </header>
+
+  <!-- Card explicativo -->
+  <section class="mb-14">
+    <div class="bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <h2 class="text-2xl font-bold mb-3">O que é Customer Success Services?</h2>
+      <p class="text-muted leading-relaxed text-sm">
+        Customer Success Services (CSS) atua no pós-venda, acompanhando a jornada do cliente
+        desde o onboarding até a evolução contínua do uso das soluções Oracle.
+        A área trabalha de forma consultiva, antecipando necessidades, resolvendo desafios
+        e garantindo resultados de negócio.
+      </p>
+    </div>
+  </section>
+
+  <!-- Abas -->
+  <section>
+    <div class="flex justify-center gap-3 mb-8">
+      <button id="tab-sobre" class="tab-btn px-5 py-2 rounded-md bg-accent font-semibold text-sm">Sobre</button>
+      <button id="tab-onboarding" class="tab-btn px-5 py-2 rounded-md bg-surface text-sm">Onboarding</button>
+      <button id="tab-recursos" class="tab-btn px-5 py-2 rounded-md bg-surface text-sm">Recursos</button>
+    </div>
+
+    <!-- Sobre -->
+    <div id="content-sobre" class="tab-content bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <p class="text-muted text-sm leading-relaxed">
+        Em CSS, você desenvolverá habilidades de relacionamento com clientes,
+        análise de uso de soluções, comunicação estratégica e visão de negócio.
+        A área é fundamental para garantir satisfação, renovação e expansão de contratos.
+      </p>
+    </div>
+
+    <!-- Onboarding -->
+    <div id="content-onboarding" class="tab-content hidden bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <h3 class="text-lg font-semibold mb-3">Onboarding Próprio da Área</h3>
+      <p class="text-muted text-sm leading-relaxed mb-4">
+        A área de Customer Success Services possui um <strong class="text-white">onboarding próprio</strong>,
+        estruturado especificamente para preparar novos integrantes para atuar
+        com clientes, processos e metodologias da área.
+      </p>
+      <p class="text-muted text-sm leading-relaxed mb-6">
+        Esse onboarding inclui treinamentos técnicos, entendimento da jornada do cliente,
+        ferramentas internas e boas práticas de sucesso do cliente na Oracle.
+      </p>
+
+      <a href="https://www.oracle.com/customer-success/" target="_blank"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-md text-sm font-semibold hover:bg-accent/80">
+        <span class="material-icons-outlined text-base">open_in_new</span>
+        Conhecer CSS na Oracle
+      </a>
+    </div>
+
+    <!-- Recursos -->
+    <div id="content-recursos" class="tab-content hidden bg-surface rounded-md p-6 shadow-elev border border-white/10">
+      <ul class="list-disc list-inside text-muted text-sm space-y-2">
+        <li>Materiais internos de Customer Success</li>
+        <li>Guia de Jornada do Cliente</li>
+        <li>Ferramentas de acompanhamento e adoção</li>
+      </ul>
+    </div>
+
+  </section>
+</main>
+
+<!-- JS abas -->
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('bg-accent'));
+      tabs.forEach(t => t.classList.add('bg-surface'));
+      tab.classList.add('bg-accent');
+      tab.classList.remove('bg-surface');
+
+      contents.forEach(c => c.classList.add('hidden'));
+      document.getElementById(tab.id.replace('tab-', 'content-')).classList.remove('hidden');
+    });
+  });
+</script>
+
+</body>
+</html>

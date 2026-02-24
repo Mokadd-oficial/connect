@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Mapa Benefícios Porto Seguro</title>
+    <style>
+        body { font-family: Arial; background: #f0f8ff; text-align: center; }
+        #mapa { position: relative; width: 800px; height: 500px; margin: 20px auto; background: linear-gradient(to bottom, #87CEEB, #90EE90); border: 2px solid #4682B4; }
+        .icone { position: absolute; width: 60px; height: 60px; background: #FF4500; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; transition: transform 0.3s; }
+        .icone:hover { transform: scale(1.2); }
+        #flashcard { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 200px; background: white; border: 3px solid #FF4500; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); z-index: 1000; perspective: 1000px; }
+        .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .card-back { transform: rotateY(180deg); }
+        .flip .card-inner { transform: rotateY(180deg); }
+        button { margin: 5px; padding: 10px; background: #FF4500; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        #pontos { position: fixed; top: 10px; right: 10px; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Mapa de Benefícios Porto Seguro</h1>
+    <div id="mapa">
+        <div class="icone" style="top: 20%; left: 10%;" data-pergunta="Qual benefício no Auto?" data-resposta="Assistência 24h com guincho ilimitado.">Auto</div>
+        <div class="icone" style="top: 40%; left: 20%;" data-pergunta="PortoPlus?" data-resposta="Descontos em restaurantes, cinemas e academias (até 50%).">Plus</div>
+        <div class="icone" style="top: 60%; left: 15%;" data-pergunta="Residencial?" data-resposta="Reparos em casa e eletricista 24h.">Casa</div>
+        <!-- Adicione mais ícones aqui -->
+    </div>
+    <div id="pontos">Pontos: <span id="score">0</span></div>
+    <div id="flashcard">
+        <div class="card-inner">
+            <div class="card-front">
+                <h3 id="pergunta"></h3>
+                <button onclick="flipCard()">Ver Resposta</button>
+            </div>
+            <div class="card-back">
+                <h3 id="resposta"></h3>
+                <button onclick="flipCard()">Fechar</button>
+                <button onclick="quizCerto()">Acertou!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+        const icones = document.querySelectorAll('.icone');
+        const flashcard = document.getElementById('flashcard');
+        const perguntaEl = document.getElementById('pergunta');
+        const respostaEl = document.getElementById('resposta');
+        const scoreEl = document.getElementById('score');
+        let isFlipped = false;
+
+        icones.forEach(icone => {
+            icone.addEventListener('click', () => {
+                perguntaEl.textContent = icone.dataset.pergunta;
+                respostaEl.textContent = icone.dataset.resposta;
+                flashcard.style.display = 'block';
+                isFlipped = false;
+                flashcard.classList.remove('flip');
+            });
+        });
+
+        function flipCard() {
+            flashcard.classList.toggle('flip');
+            isFlipped = !isFlipped;
+        }
+
+        function quizCerto() {
+            score += 10;
+            scoreEl.textContent = score;
+            flashcard.style.display = 'none';
+            alert('Ótimo! +10 pontos. Explore mais!');
+        }
+
+        // Fechar com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') flashcard.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bem-estar na Oracle</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f20d0d",
+            primaryDark: "#b30000",
+            backgroundDark: "#050000",
+            cardDark: "#120505",
+            accentDark: "#2b0a0a"
+          },
+          fontFamily: {
+            display: ["Public Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-backgroundDark text-white font-display min-h-screen">
+
+<!-- ================= HEADER (FULL WIDTH) ================= -->
+<header class="sticky top-0 z-50 w-full border-b border-accent-dark bg-background-dark/95 backdrop-blur-md">
+<div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-primary">
+</div>
+<h1 class="text-white font-bold text-xl tracking-tight">Connect <span class="text-primary font-white">+</span>Ferramentas</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+    <a href="home.html" class="text-white hover:text-primary text-sm font-bold transition-colors">
+    Home
+    </a>
+  <a
+    href="ferramentas.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Ferramentas
+  </a>
+
+  <a
+    href="cultura.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Cultura e Inclusão
+  </a>
+    <a
+    href="impacto.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Impacto Social
+  </a>
+    <a
+    href="beneficios.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Benefícios
+  </a>
+    <a
+    href="bemestar.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Bem-estar
+  </a>
+    <a
+    href="rankImpacto.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+  >
+    Ranking
+  </a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="h-8 w-[1px] bg-white/10 mx-1"></div>
+<div class="flex flex-col items-end mr-2 hidden sm:flex">
+<span class="text-xs text-primary font-semibold">Nível 1</span>
+<span class="text-sm font-bold text-white">Impact Beginner</span>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-primary p-0.5 cursor-pointer hover:scale-105 transition-transform relative group">
+<img alt="User avatar profile picture" class="rounded-full h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmLEDCVKSMWIIehwQRQQJEgraKhy88pxiSgDn8TWAeKkqMWGhNPX9i-hI5Wpxn7jrLPk2DrdEF1ffBjMuWPuTk5k6TKFGP54nKHjZVMTSfYpANUlM24tncQw4SlEmf5L7WeZV73dBmj5qfeXaxkG7dqS62DGWK9UN8FHP3hHSoop2VxaklDTlh_0p1-YyZ8II8mZfh_zssqKxxB1ZteBhDnaKZP4bnbQpkGhLGAo-SX_hQwwh0yKVPSxtheZlTDEOVJj6Xvb6ECxU"/>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></div>
+</div>
+</div>
+</div>
+</header>
+
+<div class="max-w-[1400px] mx-auto px-6 mt-6">
+  <a href="Index1.html" class="inline-flex items-center gap-2 text-white/70 hover:text-primary transition-colors font-medium">
+    <span class="material-symbols-outlined">arrow_back</span>
+    Voltar
+  </a>
+</div>
+
+<!-- ================= HERO (FULL WIDTH REAL) ================= -->
+<section class="relative overflow-hidden border-b border-accentDark">
+  <!-- Efeito de luz -->
+  <div class="absolute -top-32 -right-32 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[120px]"></div>
+
+  <div class="max-w-[1600px] mx-auto px-8 py-20 grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
+
+    <!-- TEXTO -->
+    <div class="lg:col-span-7">
+      <span class="inline-block mb-5 px-4 py-1 bg-primary text-xs font-bold uppercase tracking-widest">
+        Nova Missão Ativa
+      </span>
+
+      <h2 class="text-6xl xl:text-7xl font-black leading-[1.05] mb-8">
+        CONNECT +<br>
+        <span class="text-primary">BEM-ESTAR</span>
+      </h2>
+
+      <p class="text-xl text-white/70 max-w-2xl mb-10 leading-relaxed">
+        Na Oracle, seu bem-estar é prioridade. Explore programas de relaxamento, dicas para saúde física e mental, e participe de atividades que promovem equilíbrio e produtividade sustentável.
+      </p>
+
+      <div class="flex flex-wrap gap-6">
+        <a href="#atividades" class="bg-primary hover:bg-primaryDark px-10 py-5 rounded-lg font-bold flex items-center gap-2 text-white transition-colors text-lg shadow-lg">
+          Explorar Atividades
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+
+        <a href="#dicas" class="border border-white/15 px-10 py-5 rounded-lg hover:bg-white hover:text-black transition-colors text-lg font-medium flex items-center justify-center">
+          Ver Dicas
+        </a>
+      </div>
+    </div>
+
+    <!-- PROGRESSO -->
+    <div class="lg:col-span-5 flex items-center">
+      <div class="w-full bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+        <h3 class="font-bold mb-8 text-lg">Seu Progresso de Bem-Estar</h3>
+
+        <div class="space-y-8">
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="text-white/60">Atividades Participadas</span>
+              <span class="text-primary font-bold">3 / 15</span>
+            </div>
+            <div class="h-2 bg-white/10 rounded-full">
+              <div class="h-full bg-primary w-[20%]"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="text-white/60">Pontos de Saúde</span>
+              <span class="text-primary font-bold">150 / 500</span>
+            </div>
+            <div class="h-2 bg-white/10 rounded-full">
+              <div class="h-full bg-primary w-[30%]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTEÚDO (CENTRALIZADO) ================= -->
+<main class="py-24">
+  <div class="max-w-[1600px] mx-auto px-8">
+
+    <!-- SEÇÃO DE ATIVIDADES -->
+    <section id="atividades" class="mb-16">
+      <h3 class="text-4xl font-black mb-10 text-center">Atividades de Bem-Estar</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-cardDark rounded-3xl border border-accentDark p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="material-symbols-outlined text-primary text-4xl">spa</span>
+            <h4 class="text-2xl font-bold">Massagens Relaxantes</h4>
+          </div>
+          <p class="text-white/70 mb-6">Sessões gratuitas para aliviar tensão muscular e promover relaxamento, disponíveis no escritório.</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex justify-between text-sm">
+              <span class="text-white/60">Frequência:</span>
+              <span class="text-primary font-bold">2x por mês</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-white/60">Duração:</span>
+              <span class="text-primary font-bold">20 min</span>
+            </div>
+          </div>
+          <button class="w-full bg-primary hover:bg-primaryDark py-3 rounded-lg font-bold text-white transition-colors">
+            Agendar Sessão
+          </button>
+        </div>
+
+        <div class="bg-cardDark rounded-3xl border border-accentDark p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="material-symbols-outlined text-primary text-4xl">self_improvement</span>
+            <h4 class="text-2xl font-bold">Meditação Guiada</h4>
+          </div>
+          <p class="text-white/70 mb-6">Sessões virtuais para reduzir estresse e melhorar foco, com instrutores especializados.</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex justify-between text-sm">
+              <span class="text-white/60">Disponibilidade:</span>
+              <span class="text-primary font-bold">Diária</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-white/60">Formato:</span>
+              <span class="text-primary font-bold">Online</span>
+            </div>
+          </div>
+          <button class="w-full bg-primary hover:bg-primaryDark py-3 rounded-lg font-bold text-white transition-colors">
+            Participar Agora
+          </button>
+        </div>
+
+        <div class="bg-cardDark rounded-3xl border border-accentDark p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="material-symbols-outlined text-primary text-4xl">sports_yoga</span>
+            <h4 class="text-2xl font-bold">Aulas de Yoga</h4>
+          </div>
+          <p class="text-white/70 mb-6">Aulas virtuais de yoga para flexibilidade, força e bem-estar mental.</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex justify-between text-sm">
+              <span class="text-white/60">Frequência:</span>
+              <span class="text-primary font-bold">3x por semana</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-white/60">Nível:</span>
+              <span class="text-primary font-bold">Todos</span>
+            </div>
+          </div>
+          <button class="w-full bg-primary hover:bg-primaryDark py-3 rounded-lg font-bold text-white transition-colors">
+            Inscrever-se
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE DICAS -->
+    <section id="dicas" class="mb-16">
+      <h3 class="text-4xl font-black mb-10 text-center">Dicas para Seu Bem-Estar</h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="bg-cardDark rounded-3xl border border-accentDark p-10">
+          <h4 class="text-3xl font-bold mb-8">Home Office Otimizado</h4>
+          <ul class="space-y-4 text-white/80">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Crie um espaço dedicado ao trabalho, separado do lazer.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Use iluminação natural e lâmpadas adequadas para reduzir fadiga ocular.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Invista em cadeira ergonômica e mesa ajustável.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Faça pausas regulares para alongar e caminhar.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-cardDark rounded-3xl border border-accentDark p-10">
+          <h4 class="text-3xl font-bold mb-8">Postura e Saúde Física</h4>
+          <ul class="space-y-4 text-white/80">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Mantenha pés apoiados no chão e tela na altura dos olhos.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Alongue pescoço, ombros e punhos a cada hora.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Levante-se e mova-se a cada 30 minutos.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <span>Pratique respiração profunda para reduzir tensão.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE GAMIFICAÇÃO -->
+    <section class="bg-primary rounded-3xl p-10 text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/40"></div>
+
+      <div class="relative z-10">
+        <h3 class="text-4xl font-black mb-10 text-center">Gamificação: Desbloqueie a Medalha de Bem-Estar</h3>
+
+        <p class="text-white/80 mb-8 text-center max-w-2xl mx-auto">
+          Teste seu conhecimento sobre bem-estar. Responda corretamente para acumular pontos e desbloquear a medalha exclusiva – símbolo do seu compromisso com a saúde!
+        </p>
+
+        <div id="quiz-container" class="max-w-2xl mx-auto space-y-6 mb-12">
+          <!-- Quiz será inserido aqui via JS -->
+        </div>
+
+        <div class="text-center">
+          <div class="inline-block border-t border-white/30 pt-6 mb-8">
+            <div class="text-xs uppercase text-white/70">Pontos Atuais</div>
+            <div id="score" class="text-6xl font-black">0</div>
+            <div class="text-lg">Pontos Acumulados</div>
+          </div>
+
+          <div id="reward" class="bg-black/30 p-6 rounded-xl border border-white/20 mb-6 max-w-md mx-auto">
+            <h4 class="font-bold text-primary" id="reward-title">Continue Jogando para Desbloquear!</h4>
+            <p class="text-white/80 text-sm" id="reward-text">Acumule 300 pontos ou mais para retirar seu prêmio exclusivo.</p>
+            <img src="https://via.placeholder.com/200x150?text=Medalha+Bem-Estar" alt="Medalha de Bem-Estar" class="mt-4 rounded-lg opacity-50 mx-auto" id="reward-img">
+          </div>
+
+          <button id="start-quiz" class="bg-white text-primary hover:bg-black hover:text-white px-10 py-4 rounded-lg font-bold transition-all uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg mx-auto">
+            Iniciar Quiz
+            <span class="material-symbols-outlined text-sm">play_arrow</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script>
+  const quizData = [
+    {
+      question: "Qual é a frequência das sessões de massagem na Oracle?",
+      options: ["Uma vez por semana", "Duas vezes por mês", "Todos os dias", "Uma vez por ano"],
+      answer: 1
+    },
+    {
+      question: "O que é recomendado para um home office otimizado?",
+      options: ["Trabalhar na cama", "Espaço dedicado ao trabalho", "Sem pausas", "Luz artificial forte"],
+      answer: 1
+    },
+    {
+      question: "Qual prática ajuda a manter boa postura?",
+      options: ["Sentar torto", "Alongamentos diários", "Não se mover", "Olhar para baixo"],
+      answer: 1
+    },
+    {
+      question: "O que as iniciativas de bem-estar promovem?",
+      options: ["Aumento de estresse", "Equilíbrio entre trabalho e vida", "Isolamento", "Competição"],
+      answer: 1
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+  const quizContainer = document.getElementById('quiz-container');
+  const scoreDisplay = document.getElementById('score');
+  const rewardTitle = document.getElementById('reward-title');
+  const rewardText = document.getElementById('reward-text');
+  const rewardImg = document.getElementById('reward-img');
+  const startBtn = document.getElementById('start-quiz');
+
+  function loadQuestion() {
+    if (currentQuestion >= quizData.length) {
+      endQuiz();
+      return;
+    }
+    const q = quizData[currentQuestion];
+    quizContainer.innerHTML = `
+      <div class="bg-black/30 p-6 rounded-xl border border-white/20">
+        <h4 class="font-bold mb-4">${q.question}</h4>
+        ${q.options.map((opt, i) => `<button class="block w-full text-left p-3 mb-2 bg-white/10 rounded hover:bg-white/20 transition" onclick="selectAnswer(${i})">${opt}</button>`).join('')}
+      </div>
+    `;
+  }
+
+  function selectAnswer(selected) {
+    if (selected === quizData[currentQuestion].answer) {
+      score += 100;
+      scoreDisplay.textContent = score;
+    }
+    currentQuestion++;
+    loadQuestion();
+  }
+
+  function endQuiz() {
+    quizContainer.innerHTML = `
+      <div class="bg-black/30 p-6 rounded-xl border border-white/20">
+        <h4 class="font-bold">Quiz Concluído!</h4>
+        <p class="text-white/80">Você acumulou ${score} pontos.</p>
+        <img src="https://via.placeholder.com/200x150?text=Medalha+Bem-Estar" alt="Medalha de Bem-Estar" class="mt-4 rounded-lg">
+      </div>
+    `;
+    updateReward();
+  }
+
+  function updateReward() {
+    if (score >= 300) {
+      rewardTitle.textContent = "Parabéns! Você Desbloqueou a Medalha de Bem-Estar!";
+      rewardText.textContent = "Pode retirar seu prêmio exclusivo agora.";
+      rewardImg.classList.remove('opacity-50');
+    } else {
+      rewardTitle.textContent = "Continue Jogando para Desbloquear!";
+      rewardText.textContent = "Acumule 300 pontos ou mais para retirar seu prêmio exclusivo.";
+      rewardImg.classList.add('opacity-50');
+    }
+  }
+
+  startBtn.addEventListener('click', () => {
+    currentQuestion = 0;
+    score = 0;
+    scoreDisplay.textContent = score;
+    updateReward();
+    loadQuestion();
+  });
+</script>
+
+</body>
+</html>

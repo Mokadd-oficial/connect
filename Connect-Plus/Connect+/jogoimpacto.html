@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eco Beach – MVP</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #0d1b2a;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+canvas {
+    background: #1b263b;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+</style>
+</head>
+<body>
+
+<div id="gameContainer">
+    <canvas id="gameCanvas" width="900" height="520"></canvas>
+</div>
+
+<script>
+// ====================
+// CONFIGURAÇÃO
+// ====================
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+const WIDTH = canvas.width;
+const HEIGHT = canvas.height;
+
+// ====================
+// ASSETS
+// ====================
+const assets = {
+    beach: new Image(),
+    trash: [
+        new Image(),
+        new Image(),
+        new Image()
+    ]
+};
+
+assets.beach.src = "assets/beach.png";
+assets.trash[0].src = "assets/trash1.png";
+assets.trash[1].src = "assets/trash2.png";
+assets.trash[2].src = "assets/trash3.png";
+
+let assetsLoaded = 0;
+let totalAssets = 4;
+
+function assetLoaded() {
+    assetsLoaded++;
+}
+
+assets.beach.onload = assetLoaded;
+assets.trash.forEach(img => img.onload = assetLoaded);
+
+// ====================
+// GAME STATE
+// ====================
+let score = 0;
+let beachHealth = 40;
+
+const trashItems = [];
+
+function spawnTrash() {
+    const size = 48;
+    trashItems.push({
+        x: Math.random() * (WIDTH - 200) + 100,
+        y: Math.random() * (HEIGHT - 200) + 120,
+        size: size,
+        sprite: Math.floor(Math.random() * assets.trash.length),
+        alive: true
+    });
+}
+
+for (let i = 0; i < 8; i++) spawnTrash();
+
+// ====================
+// INPUT
+// ====================
+canvas.addEventListener("click", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+
+    trashItems.forEach(t => {
+        if (!t.alive) return;
+
+        if (mx >= t.x && mx <= t.x + t.size &&
+            my >= t.y && my <= t.y + t.size) {
+
+            t.alive = false;
+            score += 10;
+            beachHealth = Math.min(100, beachHealth + 5);
+        }
+    });
+});
+
+// ====================
+// DRAW FUNCTIONS
+// ====================
+function drawBackground() {
+    if (assets.beach.complete && assets.beach.naturalWidth > 0) {
+        ctx.drawImage(assets.beach, 0, 0, WIDTH, HEIGHT);
+    } else {
+        // fallback bonito
+        ctx.fillStyle = "#4ea8de";
+        ctx.fillRect(0,0,WIDTH,HEIGHT);
+
+        ctx.fillStyle = "#ffd166";
+        ctx.fillRect(0, HEIGHT*0.65, WIDTH, HEIGHT*0.35);
+
+        ctx.fillStyle = "#118ab2";
+        ctx.fillRect(0, HEIGHT*0.55, WIDTH, HEIGHT*0.1);
+    }
+}
+
+function drawTrash() {
+    trashItems.forEach(t => {
+        if (!t.alive) return;
+
+        const img = assets.trash[t.sprite];
+        if (img.complete && img.naturalWidth > 0) {
+            ctx.drawImage(img, t.x, t.y, t.size, t.size);
+        } else {
+            ctx.fillStyle = "#444";
+            ctx.fillRect(t.x, t.y, t.size, t.size);
+        }
+    });
+}
+
+function drawHUD() {
+    ctx.fillStyle = "rgba(0,0,0,0.6)";
+    ctx.fillRect(20, 20, 260, 90);
+    ctx.fillRect(WIDTH - 280, 20, 260, 90);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "18px Arial";
+    ctx.fillText("Pontuação", 40, 50);
+    ctx.fillText(score, 40, 75);
+
+    ctx.fillText("Saúde da Praia", WIDTH - 260, 50);
+
+    // barra
+    ctx.fillStyle = "#333";
+    ctx.fillRect(WIDTH - 260, 65, 220, 20);
+
+    const barWidth = (beachHealth / 100) * 220;
+
+    ctx.fillStyle = beachHealth > 60 ? "#2ecc71" :
+                    beachHealth > 30 ? "#f1c40f" : "#e74c3c";
+
+    ctx.fillRect(WIDTH - 260, 65, barWidth, 20);
+}
+
+function drawTitle() {
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "28px Arial";
+    ctx.fillText("Eco Beach", WIDTH/2 - 70, 50);
+}
+
+// ====================
+// GAME LOOP
+// ====================
+function update() {
+    drawBackground();
+    drawTrash();
+    drawHUD();
+    drawTitle();
+
+    requestAnimationFrame(update);
+}
+
+update();
+</script>
+
+</body>
+</html>

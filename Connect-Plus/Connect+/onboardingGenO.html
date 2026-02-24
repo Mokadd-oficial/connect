@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GenO Guide: Integrated Mission Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-dark": "#0a0505",
+                        "surface-dark": "#160b0b",
+                        "border-dark": "#2d1616",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Space Grotesk', sans-serif;
+                @apply bg-background-dark text-white antialiased overflow-hidden;
+            }
+        }
+        .glass-card {
+            background: rgba(22, 11, 11, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(242, 13, 13, 0.1);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #f20d0d 0%, #2d1616 100%);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .circular-gauge {
+            background: conic-gradient(#f20d0d 40%, #1c0d0d 0);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d1616;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f20d0d;
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+<aside class="w-64 border-r border-border-dark flex flex-col bg-background-dark shrink-0">
+<div class="p-8 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-2xl">rocket_launch</span>
+</div>
+<span class="font-black text-xl tracking-tighter uppercase italic">GenO Guide</span>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<div class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em] px-4 mb-4">Onboarding FY27</div>
+<a class="flex items-center gap-4 px-4 py-4 rounded-xl bg-primary/10 border border-primary/20 text-primary transition-all group" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-bold">Semana 1</span>
+<div class="ml-auto size-2 bg-primary rounded-full animate-pulse"></div>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 text-zinc-400 transition-all border border-transparent" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-medium">Semana 2</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 text-zinc-400 transition-all border border-transparent" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-medium">Semana 3</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 rounded-xl hover:bg-white/5 text-zinc-400 transition-all border border-transparent" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-medium">Semana 4</span>
+</a>
+</nav>
+<div class="p-6 border-t border-border-dark">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
+<div class="size-10 rounded-full border border-primary/50 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4E37Gxy90fot9aDSZnUGwfdG7OryY0dxtwvM-6fTN-_k2uxaIiLcGBhdQ8nHKVvGIo5rLdhayYZSZn3-gnAnbGn9BzNhWfHq-9W0Sf4uf1TDj9qvZqyVropEVdWTLuooBEY329cC-gQej2CFCEx2LTQT9y5KgWNZ5unoSwtbK0xkH0Stcs75Pb3FM4eTMDPGi9JZt_O7yF_JORnmPDL4CWbjxB0DQ6VqV5WDJfE-zHEXxbSKWl2hmBxY30YJi8QqdaT_quHLuZita"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Alex Silva</p>
+<p class="text-[10px] text-zinc-500 truncate">GenO Intern</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto relative bg-[#0d0707]">
+<div class="max-w-3xl mx-auto py-16 px-8 relative min-h-full">
+<div class="timeline-line hidden md:block opacity-20"></div>
+<div class="relative z-10 space-y-12">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-black uppercase tracking-tight mb-2">Semana 1: Orientação</h2>
+<p class="text-zinc-500 font-medium">Inicie sua jornada conhecendo a cultura e o espaço físico.</p>
+</div>
+<div class="relative flex flex-col items-center">
+<div class="glass-card w-full p-8 rounded-2xl border-l-4 border-l-green-500 hover:scale-[1.01] transition-transform">
+<div class="flex items-start justify-between mb-6">
+<div class="flex gap-6 items-center">
+<div class="size-16 rounded-xl bg-center bg-cover shrink-0 border border-white/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCoAM3suFBrOV6qv0lUK-oBuFAHL5XctTakxpRclUASgJ76BXmA7IiyGXOmE9JVfh9dvWlyoqZA2sw4-Rdsm4zw3Fjl4yjoHal5EVtX5o925UExBWQt138tu7iH_eATFvP-HTaoNX1z_MVVm6j1z8tG5tBe9Vo1Nfyb2mHTqrhhdgYxElcizCeF60Umatvl-PRzlbyfQOtrEKP6FR_bOm4MqFghqIUYUiBDtgpPMnfeQd8TjpfD8a3lv7WuzQgt-vhJVJxPvNOr3GZ9");'></div>
+<div>
+<h3 class="text-xl font-bold">Missão 1: Explore a Aplicação</h3>
+<div class="flex items-center gap-2 text-green-500 text-xs font-bold uppercase tracking-widest mt-1">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                        Concluído
+                                    </div>
+</div>
+</div>
+</div>
+<div class="bg-black/40 p-4 rounded-xl border border-white/5 italic text-sm text-zinc-400">
+                            "Explorei todas as funcionalidades do painel e configurei meu perfil. A interface é muito intuitiva."
+                        </div>
+</div>
+</div>
+<div class="relative flex flex-col items-center">
+<div class="glass-card w-full p-8 rounded-2xl border-l-4 border-l-primary shadow-2xl shadow-primary/5">
+<div class="flex items-start justify-between mb-6">
+<div class="flex gap-6 items-center">
+<div class="size-16 rounded-xl bg-center bg-cover shrink-0 border border-primary/20" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBO8SFQcPjPHQ2eV0ujd9swN-dq4tbE8VwoiYdAJ6aZg-GVHCfFMxfAibWQ3X8L-XndxW-jXOA31LfVBD8ekUHEA18K-5GvYrBA7lJPwYtbm4A9U55nKLsIlbiYPCeWGKiE-Eb5wmha-mPYH5cQK9a3hsusW8jH72TIlgbbI-1_uSqlAaNsSdwVQdmSX_GfZO-PfwiZkFy6C_sX80kcVLIe9dFtbTjosQWfzZjnzu1i-ZLMdxSMBvnz62MRybV9tRSB596zpuBpXCiJ");'></div>
+<div>
+<h3 class="text-xl font-bold">Missão 2: Descubra o Andar</h3>
+<div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest mt-1">
+<span class="material-symbols-outlined text-sm animate-spin">refresh</span>
+                                        Em Progresso
+                                    </div>
+</div>
+</div>
+<button class="bg-primary hover:bg-red-700 text-white text-xs font-black px-6 py-3 rounded-lg uppercase tracking-tighter transition-all">
+                                Retomar Missão
+                            </button>
+</div>
+<div class="space-y-3">
+<label class="text-xs font-bold text-zinc-500 uppercase tracking-widest">Sua Reflexão</label>
+<textarea class="w-full bg-black/40 border-white/10 rounded-xl text-sm focus:ring-primary focus:border-primary p-4 h-24 placeholder:text-zinc-700" placeholder="O que você achou do ambiente de trabalho hoje?"></textarea>
+</div>
+</div>
+</div>
+<div class="space-y-8 opacity-40">
+<div class="glass-card w-full p-8 rounded-2xl border border-white/5">
+<div class="flex items-center gap-6">
+<div class="size-16 rounded-xl bg-zinc-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-zinc-700">lock</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-zinc-500">Missão 3: Conheça os outros andares</h3>
+<p class="text-sm text-zinc-600">Bloqueado até concluir a missão anterior</p>
+</div>
+</div>
+</div>
+<div class="glass-card w-full p-8 rounded-2xl border border-white/5">
+<div class="flex items-center gap-6">
+<div class="size-16 rounded-xl bg-zinc-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-zinc-700">lock</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-zinc-500">Missão 4: Suporte de TI</h3>
+<p class="text-sm text-zinc-600">Bloqueado</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<aside class="w-80 border-l border-border-dark bg-background-dark p-6 overflow-y-auto space-y-6 shrink-0">
+<div class="glass-card rounded-2xl p-6 border border-white/5">
+<h4 class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em] mb-6">Progresso Geral</h4>
+<div class="flex flex-col items-center">
+<div class="relative size-32 flex items-center justify-center">
+<div class="circular-gauge absolute inset-0 rounded-full rotate-180"></div>
+<div class="absolute inset-2 bg-surface-dark rounded-full flex flex-col items-center justify-center">
+<span class="text-2xl font-black italic">40%</span>
+<span class="text-[10px] font-bold text-zinc-500 uppercase tracking-tighter">Concluído</span>
+</div>
+</div>
+<div class="mt-6 text-center">
+<p class="text-xs text-zinc-400 leading-tight">Você está indo muito bem! Próximo nível: <span class="text-primary font-bold">Explorador</span></p>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-6 border border-white/5 relative overflow-hidden">
+<div class="absolute -right-6 -top-6 opacity-10">
+<span class="material-symbols-outlined text-7xl text-primary">redeem</span>
+</div>
+<h4 class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em] mb-4">Gift Meter</h4>
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">redeem</span>
+</div>
+<div>
+<p class="text-sm font-bold">Próxima Recompensa</p>
+<p class="text-xs text-primary font-black uppercase">Dia 10</p>
+</div>
+</div>
+<div class="mt-4 w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[60%]"></div>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-5 border border-primary/20 bg-gradient-to-b from-primary/5 to-transparent">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-8 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm text-white">smart_toy</span>
+</div>
+<div>
+<p class="text-xs font-bold leading-none">GenO Guide AI</p>
+<p class="text-[9px] text-primary uppercase font-bold tracking-tighter">Facilitador Online</p>
+</div>
+</div>
+<div class="bg-black/40 p-4 rounded-xl border border-white/5 mb-4">
+<p class="text-xs leading-relaxed text-zinc-300">
+                    "Bem-vindo à jornada GenO. Aqui você explora, conecta e entende como seu papel se encaixa na Oracle. Sem pressão."
+                </p>
+</div>
+<div class="relative">
+<input class="w-full bg-white/5 border-white/10 rounded-lg text-xs py-2.5 px-3 pr-10 focus:ring-primary focus:border-primary" placeholder="Pergunte algo..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</div>
+<div class="px-2 pt-4">
+<p class="text-[9px] text-zinc-600 font-bold uppercase tracking-widest leading-loose">
+                © FY27 Oracle Corp.<br/>
+                Programa de Onboarding GenO<br/>
+                Acesso Interno Confidencial
+            </p>
+</div>
+</aside>
+
+</body></html>

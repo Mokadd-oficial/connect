@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jornada de Missões de Impacto - Oracle</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "primary-dark": "#b30000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#050000",
+                        "card-dark": "#120505",
+                        "accent-dark": "#2b0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a0f0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #392828;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f20d0d;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+            color: transparent;
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #f20d0d 0%, #2b0a0a 50%, #120505 100%);
+        }
+        /* Small logo variant */
+        .logo-inline {
+          display: flex; align-items: center; gap: 10px;
+        }
+        .logo-mark {
+          width: 36px; height: 20px;
+          border-radius: 999px;
+          background: transparent;
+          box-shadow: inset 0 0 0 4px var(--color-accent);
+        }
+        
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-accent-dark bg-background-dark/95 backdrop-blur-md">
+<div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-primary">
+
+</div>
+<h1 class="text-white font-bold text-xl tracking-tight">Connect <span class="text-primary font-white">+</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a
+    href="home.html"
+    class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+    >
+      Home
+    </a> 
+  <a href="impacto.html" class="text-white/60 hover:text-white text-sm font-medium transition-colors">
+Overview
+</a>
+<a
+      href="impacto.html"
+      class="text-white hover:text-primary text-sm font-bold transition-colors"
+>
+      Jornada
+</a>
+</nav>
+
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end mr-2 hidden sm:flex">
+<span class="text-xs text-primary font-semibold">Nível 1</span>
+<span class="text-sm font-bold text-white">Impact Beginner</span>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-primary p-0.5 cursor-pointer hover:scale-105 transition-transform relative group">
+<img alt="User avatar profile picture" class="rounded-full h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmLEDCVKSMWIIehwQRQQJEgraKhy88pxiSgDn8TWAeKkqMWGhNPX9i-hI5Wpxn7jrLPk2DrdEF1ffBjMuWPuTk5k6TKFGP54nKHjZVMTSfYpANUlM24tncQw4SlEmf5L7WeZV73dBmj5qfeXaxkG7dqS62DGWK9UN8FHP3hHSoop2VxaklDTlh_0p1-YyZ8II8mZfh_zssqKxxB1ZteBhDnaKZP4bnbQpkGhLGAo-SX_hQwwh0yKVPSxtheZlTDEOVJj6Xvb6ECxU"/>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></div>
+</div>
+</div>
+</div>
+</header>
+<div class="w-full px-6 mt-6">
+  <a
+    href="Impacto.html"
+    class="inline-flex items-center gap-1 text-white/50 hover:text-primary
+           transition-colors text-sm"
+  >
+    <span class="material-symbols-outlined text-base">arrow_back</span>
+    Voltar
+  </a>
+</div>
+
+
+
+<main class="flex-grow w-full max-w-[1400px] mx-auto px-6 py-8">
+<div class="mb-12 relative overflow-hidden rounded-3xl bg-card-dark border border-accent-dark">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -mr-32 -mt-32 pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-12 relative z-10">
+<div class="lg:col-span-7 flex flex-col justify-center">
+<h1 class="text-5xl md:text-6xl font-black text-white leading-[0.95] mb-6 tracking-tight">
+                        JORNADA DE <br/>
+<span class="text-primary">MISSÕES DE IMPACTO.</span>
+</h1>
+<p class="text-xl text-white/70 max-w-xl mb-8 leading-relaxed">
+                        Bem-vindo à sua jornada gamificada de impacto social. Complete as missões abaixo para desbloquear conquistas e ver como suas ações transformam comunidades.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-lg transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(242,13,13,0.3)]">
+                            Continuar Jornada
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_downward</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="bg-background-dark/50 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-white text-lg">Seu Progresso</h3>
+<span class="bg-white/10 px-3 py-1 rounded-full text-xs font-mono text-white/80">NÍVEL 3</span>
+</div>
+<div class="space-y-6 mb-8">
+<div>
+<div class="flex justify-between mb-2 text-sm">
+<span class="text-white/60">Missões Completas</span>
+<span class="text-primary font-bold">1 / 5</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[20%] relative">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2 text-sm">
+<span class="text-white/60">Horas de Voluntariado</span>
+<span class="text-primary font-bold">0h / 16h</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[0%] relative">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="h-16 w-16 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-primary/50 flex items-center justify-center group cursor-pointer hover:border-primary transition-colors relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/10"></div>
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+</div>
+<div class="h-16 w-16 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-gray-500 text-3xl group-hover:scale-110 transition-transform">lock</span>
+</div>
+<div class="h-16 w-16 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-gray-500 text-3xl group-hover:scale-110 transition-transform">lock</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-4xl mx-auto mb-20 relative">
+<h2 class="text-3xl font-black text-white mb-12 text-center uppercase tracking-widest">Sua Jornada</h2>
+<div class="relative pl-4 md:pl-0">
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/5 md:-ml-[1px]"></div>
+<div class="relative mb-16 group w-full flex flex-col md:flex-row md:items-center">
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-20">
+<div class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_15px_rgba(242,13,13,0.5)]">
+<span class="material-symbols-outlined text-white font-bold">check</span>
+</div>
+</div>
+<div class="md:w-1/2 pl-20 md:pl-0 md:pr-16 md:text-right">
+<div class="bg-card-dark/80 backdrop-blur border border-primary/30 rounded-xl p-6 relative hover:bg-card-dark transition-colors">
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-2 block">Missão 01 • Concluído</span>
+<h3 class="text-xl font-bold text-white mb-2">Conhecer o voluntário</h3>
+<p class="text-white/60 text-sm mb-4">Entenda a cultura de voluntariado da Oracle e como você pode fazer parte da mudança.</p>
+<button class="text-xs font-bold text-white flex items-center gap-1 md:ml-auto hover:text-primary transition-colors">
+                                Ver Detalhes <span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<div class="relative mb-16 group w-full flex flex-col md:flex-row md:items-center">
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-20">
+<div class="w-12 h-12 rounded-full bg-background-dark border-2 border-primary flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border border-primary animate-ping opacity-75"></div>
+<span class="material-symbols-outlined text-primary">play_arrow</span>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+<div class="md:w-1/2 pl-20 md:pl-16">
+<div class="bg-gradient-to-r from-card-dark to-[#1a0505] border border-primary rounded-xl p-6 relative shadow-[0_0_30px_rgba(242,13,13,0.1)] transform md:-translate-x-2 transition-transform hover:-translate-y-1">
+<span class="bg-primary text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mb-3 inline-block">Em Progresso</span>
+<h3 class="text-xl font-bold text-white mb-2">Conhecer as práticas de impacto social pelo escritório</h3>
+<p class="text-white/70 text-sm mb-4">Descubra as iniciativas sustentáveis e comunitárias específicas do seu escritório local.</p>
+<a
+  href="missaoConhecerImpacto.html"
+  class="w-full py-2 bg-primary hover:bg-primary-dark
+         text-white text-sm font-bold rounded
+         transition-colors flex items-center justify-center gap-2"
+>
+  Iniciar Atividade
+  <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+
+</div>
+</div>
+</div>
+<div class="relative mb-16 group w-full flex flex-col md:flex-row md:items-center opacity-60 hover:opacity-100 transition-opacity">
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-20">
+<div class="w-10 h-10 rounded-full bg-background-dark border border-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/40 text-sm">lock</span>
+</div>
+</div>
+<div class="md:w-1/2 pl-20 md:pl-0 md:pr-16 md:text-right">
+<div class="bg-card-dark border border-white/5 rounded-xl p-6 relative">
+<span class="text-white/40 text-xs font-bold uppercase tracking-wider mb-2 block">Missão 03 • Bloqueado</span>
+<h3 class="text-white font-bold text-xl mb-2">Fazer um voluntário</h3>
+<p class="text-white/40 text-sm">Inscreva-se e complete sua primeira atividade oficial de voluntariado na plataforma.</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<div class="relative mb-16 group w-full flex flex-col md:flex-row md:items-center opacity-60 hover:opacity-100 transition-opacity">
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-20">
+<div class="w-10 h-10 rounded-full bg-background-dark border border-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/40 text-sm">lock</span>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+<div class="md:w-1/2 pl-20 md:pl-16">
+<div class="bg-card-dark border border-white/5 rounded-xl p-6 relative">
+<span class="text-white/40 text-xs font-bold uppercase tracking-wider mb-2 block">Missão 04 • Bloqueado</span>
+<h3 class="text-white font-bold text-xl mb-2">Fazer mais de 16 horas de voluntário</h3>
+<p class="text-white/40 text-sm">Dedique-se a uma causa. Acumule 16h de trabalho voluntário registrado.</p>
+</div>
+</div>
+</div>
+<div class="relative group w-full flex flex-col md:flex-row md:items-center opacity-60 hover:opacity-100 transition-opacity">
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-20">
+<div class="w-12 h-12 rounded-full bg-background-dark border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+<span class="material-symbols-outlined text-white/30 text-xl">star</span>
+</div>
+</div>
+<div class="md:w-1/2 pl-20 md:pl-0 md:pr-16 md:text-right">
+<div class="bg-card-dark border border-white/5 rounded-xl p-6 relative border-dashed">
+<span class="text-white/40 text-xs font-bold uppercase tracking-wider mb-2 block">Missão Final • Bloqueado</span>
+<h3 class="text-white font-bold text-xl mb-2">Organizar um voluntário</h3>
+<p class="text-white/40 text-sm">O desafio final. Lidere e organize um evento de voluntariado para engajar seus colegas.</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

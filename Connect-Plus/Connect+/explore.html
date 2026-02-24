@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Connect+ — Explore o Prédio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app">
+  <header class="topbar">
+    <div class="brand"><h1>Connect+</h1></div>
+    <nav><a href="index.html" class="navlink">Voltar</a></nav>
+  </header>
+
+  <main class="container">
+    <h2>Explore o Prédio</h2>
+    <p class="muted">Selecione um andar e descubra equipes e pontos importantes.</p>
+
+    <div class="map-grid">
+      <div class="map-floor" data-floor="t">Térreo</div>
+      <div class="map-floor" data-floor="1">1º Andar</div>
+      <div class="map-floor" data-floor="2">2º Andar</div>
+      <div class="map-floor" data-floor="3">3º Andar</div>
+    </div>
+
+    <div id="floor-info" class="card mt-16">
+      <h3>Informações do andar</h3>
+      <p id="floor-desc" class="muted">Selecione um andar acima.</p>
+      <button id="claim-explore" class="btn primary" style="display:none;">Concluir missão (100 XP)</button>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const floors = document.querySelectorAll('.map-floor');
+      const desc = document.getElementById('floor-desc');
+      const btn = document.getElementById('claim-explore');
+      let selected = null;
+
+      floors.forEach(f => {
+        f.addEventListener('click', () => {
+          floors.forEach(x=>x.classList.remove('selected'));
+          f.classList.add('selected');
+          selected = f.dataset.floor;
+          desc.textContent = `Você selecionou: ${f.textContent}. Aqui estão equipes e líderes alocados — (exemplo).`;
+          btn.style.display = 'inline-block';
+        });
+      });
+
+      btn.addEventListener('click', () => {
+        // marca missão 'explore' como concluída via app.js helper
+        window.dispatchEvent(new CustomEvent('cp:completeMission', {detail:{id:'explore', xp:100, badge:'Explorador do Andar'}}));
+        btn.textContent = 'Missão concluída';
+        btn.disabled = true;
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Benefícios | Porto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/porto.css" />
+</head>
+<body>
+    <header>
+        <h1>Mapa de Benefícios <strong>Porto</strong></h1>
+        <div id="pontos">SCORE: <span id="score">0</span></div>
+    </header>
+
+    <main id="mapa">
+        <div class="icone" style="top: 10%; left: 8%;" data-pergunta="Qual é um dos principais benefícios no Auto Porto Seguro?" data-opcoes='["Assistência 24h com guincho ilimitado","Somente reboque em horário comercial","Somente cobertura de terceiros","Apenas troca de pneus"]' data-correta="Assistência 24h com guincho ilimitado" data-explicacao="O benefício inclui assistência 24h com guincho ilimitado para o segurado.">
+            <i class="fas fa-car"></i><span>Auto</span>
+        </div>
+
+        <div class="icone" style="top: 25%; left: 20%;" data-pergunta="O que o PortoPlus oferece?" data-opcoes='["Somente descontos em remédios","Descontos em restaurantes, cinemas e academias (até 50%)","Apenas descontos em combustíveis","Somente programas de milhagem"]' data-correta="Descontos em restaurantes, cinemas e academias (até 50%)" data-explicacao="O PortoPlus oferece descontos em restaurantes, cinemas e academias, podendo chegar a 50%.">
+            <i class="fas fa-star"></i><span>Plus</span>
+        </div>
+
+        <div class="icone" style="top: 45%; left: 10%;" data-pergunta="Qual benefício residencial está disponível?" data-opcoes='["Somente jardinagem","Reparos em casa e eletricista 24h","Apenas limpeza pós-obra","Somente serviços de pintura"]' data-correta="Reparos em casa e eletricista 24h" data-explicacao="O benefício inclui reparos em casa e serviço de eletricista 24h.">
+            <i class="fas fa-home"></i><span>Casa</span>
+        </div>
+
+        <div class="icone" style="top: 15%; left: 40%;" data-pergunta="Quem pode ser dependente no Porto Seguro Simplificado?" data-opcoes='["Apenas cônjuge/companheiro(a)","Cônjuge/companheiro(a) e filhos/enteados até 24 anos cursando faculdade","Apenas filhos até 18 anos","Somente pais e sogros"]' data-correta="Cônjuge/companheiro(a) e filhos/enteados até 24 anos cursando faculdade" data-explicacao="Dependentes: cônjuge/companheiro(a) e filhos/enteados até 24 anos, desde que estejam cursando faculdade.">
+            <i class="fas fa-users"></i><span>Elegib.</span>
+        </div>
+
+        <div class="icone" style="top: 40%; left: 40%;" data-pergunta="Como funcionam os exames no Porto Seguro Simplificado?" data-opcoes='["Todos os exames exigem autorização prévia","Exames simples são diretos na rede; exames complexos precisam de autorização prévia","Exames só podem ser feitos em hospitais","Somente exames complexos são cobertos"]' data-correta="Exames simples são diretos na rede; exames complexos precisam de autorização prévia" data-explicacao="Exames simples vão direto na rede credenciada; exames complexos exigem autorização prévia.">
+            <i class="fas fa-microscope"></i><span>Exames</span>
+        </div>
+
+        <div class="icone" style="top: 65%; left: 40%;" data-pergunta="Qual é o prazo para liberação de cirurgias e como é a coparticipação?" data-opcoes='["Prazo de até 5 dias úteis, com coparticipação","Prazo de até 21 dias úteis, sem coparticipação","Prazo de até 30 dias corridos, com 50% de coparticipação","Não há cobertura para cirurgias"]' data-correta="Prazo de até 21 dias úteis, sem coparticipação" data-explicacao="Cirurgias têm prazo de liberação de até 21 dias úteis e não possuem coparticipação.">
+            <i class="fas fa-procedures"></i><span>Cirurg.</span>
+        </div>
+
+        <div class="icone" style="top: 15%; left: 65%;" data-pergunta="Em quais serviços você paga 30% de coparticipação?" data-opcoes='["Somente internações e cirurgias","Consultas, pronto-socorro, exames, fisioterapia, fonoaudiologia, nutrição e terapias","Somente pronto-socorro","Apenas partos"]' data-correta="Consultas, pronto-socorro, exames, fisioterapia, fonoaudiologia, nutrição e terapias" data-explicacao="Há coparticipação de 30% em consultas, exames e terapias.">
+            <i class="fas fa-percentage"></i><span>Copart.</span>
+        </div>
+
+        <div class="icone" style="top: 40%; left: 65%;" data-pergunta="Quem tem isenção de coparticipação?" data-opcoes='["Apenas idosos","Crianças até 1 ano, gestantes com laudo e pacientes oncológicos com laudo","Somente gestantes","Somente pacientes oncológicos"]' data-correta="Crianças até 1 ano, gestantes com laudo e pacientes oncológicos com laudo" data-explicacao="Crianças até 1 ano, gestantes e oncológicos têm isenção.">
+            <i class="fas fa-hand-holding-medical"></i><span>Isenção</span>
+        </div>
+
+        <div class="icone" style="top: 65%; left: 65%;" data-pergunta="O que está incluído na Telemedicina + Alô Saúde?" data-opcoes='["Apenas atendimento médico presencial","Médico, nutricionista, orientação esportiva e suporte a gestantes, com telefone 24h","Somente nutricionista","Somente orientação esportiva"]' data-correta="Médico, nutricionista, orientação esportiva e suporte a gestantes, com telefone 24h" data-explicacao="O serviço inclui médico, nutrição e suporte 24h.">
+            <i class="fas fa-headset"></i><span>Telemed</span>
+        </div>
+
+        <div class="icone" style="top: 80%; left: 20%;" data-pergunta="Quantos atendimentos de assistência residencial você tem por ano?" data-opcoes='["1 atendimento","3 atendimentos por ano para chaveiro, eletricista, encanador, desentupimento e telhado","Ilimitados","Não há assistência"]' data-correta="3 atendimentos por ano para chaveiro, eletricista, encanador, desentupimento e telhado" data-explicacao="Você tem 3 atendimentos por ano para serviços emergenciais.">
+            <i class="fas fa-tools"></i><span>Resid.</span>
+        </div>
+
+        <div class="icone" style="top: 80%; left: 48%;" data-pergunta="Quais são os principais benefícios de desconto em farmácias?" data-opcoes='["Apenas itens de beleza","Descontos de 20% a 70% em remédios, 30%+ em genéricos e higiene","Somente genéricos","Desconto fixo de 10%"]' data-correta="Descontos de 20% a 70% em remédios, 30%+ em genéricos e higiene" data-explicacao="Apresentando a carteirinha, você tem descontos agressivos em grandes redes.">
+            <i class="fas fa-pills"></i><span>Farma</span>
+        </div>
+
+        <div class="icone" style="top: 80%; left: 78%;" data-pergunta="A partir de qual distância o seguro viagem é válido?" data-opcoes='["A partir de 10 km","A partir de 50 km","A partir de 100 km da sua cidade, no Brasil e exterior","Somente internacional"]' data-correta="A partir de 100 km da sua cidade, no Brasil e exterior" data-explicacao="Válido a partir de 100 km da sua cidade.">
+            <i class="fas fa-plane"></i><span>Viagem</span>
+        </div>
+    </main>
+
+    <div id="flashcard">
+        <div class="card" id="cardBox">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3 id="pergunta"></h3>
+                    <div id="opcoes-container"></div>
+                    <button id="btnFechar">Sair</button>
+                </div>
+                <div class="card-back">
+                    <h3 id="resposta"></h3>
+                    <button id="btnVoltar">Entendi!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/porto.js"></script>
+</body>
+</html>

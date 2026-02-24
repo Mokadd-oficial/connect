@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect+ — Meu Perfil</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#1C1C1C',        // Fundo principal
+            surface: '#242424',   // Superfícies / cards
+            accent: '#D64B36',    // Vermelho queimado (destaque)
+            white: '#FFFFFF',     // Textos principais
+            muted: '#BDBDBD',     // Textos secundários
+          },
+          borderRadius: {
+            'md': '12px',        // Bordas arredondadas padrão
+          },
+          boxShadow: {
+            'aria-elev-1': '0 6px 20px rgba(0,0,0,0.6)',  // Elevação
+          },
+          spacing: {
+            'gap-md': '16px',    // Espaçamento base
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-bg text-white antialiased font-sans">
+
+<!-- NAVBAR -->
+<nav class="w-full border-b border-white/10 mb-8">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-5 rounded-full bg-transparent shadow-[inset_0_0_0_4px_#D64B36]"></div>
+      <h1 class="text-xl font-bold text-accent">Connect+</h1>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+      <a href="home.html" class="hover:text-accent transition">Home</a>
+      <a href="ferramentas.html" class="hover:text-accent transition">Ferramentas</a>
+      <a href="cultura.html" class="hover:text-accent transition">Cultura Oracle</a>
+      <a href="impacto.html" class="hover:text-accent transition">Impacto Social</a>
+      <a href="beneficios.html" class="hover:text-accent transition">Benefícios</a>
+      <a href="bemestar.html" class="hover:text-accent transition">Bem-estar</a>
+      <a href="perfil.html" class="hover:text-accent transition">Meu Perfil</a>
+    </div>
+
+    <!-- Mobile button -->
+    <button id="menu-btn" class="md:hidden text-accent">
+      <span class="material-icons-outlined text-3xl">Menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden flex-col bg-surface border-t border-white/10 px-4 py-4 text-sm">
+    <a href="index1.html" class="py-2 hover:text-accent">Missões</a>
+    <a href="predio.html" class="py-2 hover:text-accent">Explorar o Prédio</a>
+    <a href="ferramentas.html" class="py-2 hover:text-accent">Ferramentas</a>
+    <a href="cultura.html" class="py-2 hover:text-accent">Cultura Oracle</a>
+    <a href="impacto.html" class="py-2 hover:text-accent">Impacto Social</a>
+    <a href="beneficios.html" class="py-2 hover:text-accent">Benefícios</a>
+    <a href="bemestar.html" class="py-2 hover:text-accent">Bem-estar</a>
+    <a href="perfil.html" class="py-2 hover:text-accent">Meu Perfil</a>
+  </div>
+</nav>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div class="max-w-7xl mx-auto p-6">
+
+  <header class="mb-12">
+    <h2 class="text-4xl font-bold text-white">
+      Meu Perfil
+    </h2>
+    <p class="text-muted text-lg">Gerencie suas informações pessoais e veja seu progresso no Connect+.</p>
+  </header>
+
+  <!-- Perfil Principal -->
+  <section class="mb-12">
+    <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-6 shadow-aria-elev-1 border border-white/3">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <!-- Foto de Perfil -->
+        <div class="w-24 h-24 rounded-full bg-surface flex items-center justify-center">
+          <span class="material-icons-outlined text-accent text-4xl">person</span>
+        </div>
+        <!-- Informações -->
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold text-white">João Silva</h3>
+          <p class="text-muted">Área: Consultoria em HCM</p>
+          <p class="text-muted">Nível: 2</p>
+        </div>
+        <!-- Botão Editar -->
+        <button class="flex items-center justify-center gap-2 p-2.5 px-4 rounded-[10px] bg-transparent text-accent border border-accent/18 cursor-pointer font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(214,75,54,0.14)] active:translate-y-0">
+          <span class="material-icons-outlined">edit</span> Editar Perfil
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estatísticas -->
+  <section class="mb-12">
+    <h3 class="text-2xl font-bold text-white mb-8">Estatísticas</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- XP Total -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-icons-outlined text-accent text-3xl">military_tech</span>
+          <div>
+            <h4 class="font-semibold text-white">XP Total</h4>
+            <p class="text-muted text-sm">130 / 500</p>
+          </div>
+        </div>
+        <div class="w-full bg-surface h-3 rounded-full">
+          <div class="bg-accent h-3 rounded-full" style="width: 26%"></div>
+        </div>
+      </div>
+
+      <!-- Missões Completas -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-icons-outlined text-accent text-3xl">task_alt</span>
+          <div>
+            <h4 class="font-semibold text-white">Missões Completas</h4>
+            <p class="text-muted text-sm">3 / 9</p>
+          </div>
+        </div>
+        <div class="w-full bg-surface h-3 rounded-full">
+          <div class="bg-accent h-3 rounded-full" style="width: 33%"></div>
+        </div>
+      </div>
+
+      <!-- Ferramentas Dominadas -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-icons-outlined text-accent text-3xl">build</span>
+          <div>
+            <h4 class="font-semibold text-white">Ferramentas Dominadas</h4>
+            <p class="text-muted text-sm">5 / 10</p>
+          </div>
+        </div>
+        <div class="w-full bg-surface h-3 rounded-full">
+          <div class="bg-accent h-3 rounded-full" style="width: 50%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Configurações -->
+  <section>
+    <h3 class="text-2xl font-bold text-white mb-8">Configurações</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Notificações -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-4">Notificações</h4>
+        <div class="space-y-3">
+          <label class="flex items-center gap-3">
+            <input type="checkbox" class="w-4 h-4 bg-surface border border-white/10 rounded" checked>
+            <span class="text-muted">Receber lembretes de missões</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" class="w-4 h-4 bg-surface border border-white/10 rounded" checked>
+            <span class="text-muted">Notificações de novas ferramentas</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" class="w-4 h-4 bg-surface border border-white/10 rounded">
+            <span class="text-muted">Atualizações de benefícios</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Privacidade -->
+      <div class="bg-gradient-to-b from-white/2 to-transparent rounded-md p-4 shadow-aria-elev-1 border border-white/3">
+        <h4 class="text-lg font-bold text-white mb-4">Privacidade</h4>
+        <div class="space-y-3">
+          <label class="flex items-center gap-3">
+            <input type="checkbox" class="w-4 h-4 bg-surface border border-white/10 rounded" checked>
+            <span class="text-muted">Perfil público</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="checkbox" class="w-4 h-4 bg-surface border border-white/10 rounded">
+            <span class="text-muted">Compartilhar progresso</span>
+          </label>
+        </div>
+        <button class="flex items-center justify-center gap-2 p-2.5 px-4 rounded-[10px] bg-accent text-white border-none cursor-pointer font-semibold shadow-[0_6px_18px_rgba(214,75,54,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(214,75,54,0.14)] active:translate-y-0 mt-4 w-full">
+          <span class="material-icons-outlined">save</span> Salvar Configurações
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- JS para menu mobile -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+</body>
+</html>
